@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/26 15:38:53 by paduarte         ###   ########.fr       */
+/*   Created: 2026/05/26 10:18:25 by paduarte          #+#    #+#             */
+/*   Updated: 2026/05/26 16:22:05 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft/libft.h"
+// static int  show_error(void);
 
-typedef struct s_stack_node
+int	check_errors(char *argv[])
 {
-	int					*value;
-	struct s_stack_node	*prev;
-	struct s_stack_node	*next;
+	size_t	i;
 
-}   t_stack_node;
+	i = 1;
+	while (argv[i])
+	{
+		if ((ft_atoll(argv[i]) > INT_MAX) || ft_atoll(argv[i]) == 0)
+			{
+                ft_printf("Error\n");
+                return(2);
+            }
+		i++;		
+	}
+	return (0);
+}
 
-char    **ft_split_argv(char const *s, char c);
-int check_errors(char *argv[]);
+//argv[i] es solo numero??: 
 
-#endif
+/*static int  show_error(void)
+{
+	ft_printf("Error\n");
+	return(2);
+}*/

@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/25 17:01:02 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/26 15:54:58 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	main(int argc, char *argv[])
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
 		return (1); // exit?
 	else if (argc == 2)
-		{
-			argv = ft_split(argv[1], ' ');
-		}
+			argv = ft_split_argv(argv[1], ' ');
+	if (check_errors(argv))
+		return(2);
 	while(argv[i])
 	{
 		printf("%s\n", argv[i]);

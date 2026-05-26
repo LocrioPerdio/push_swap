@@ -3,23 +3,27 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRC = \
 	main.c \
-	ft_split.c \
+	ft_split_argv.c \
+	check_errors.c \
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(MAKE) -C ./libft
+	@$(CC) $(CFLAGS) $(OBJ) ./libft/libft.a -o $(NAME)
 
-%.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c 
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@${MAKE} -C ./libft clean
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@${MAKE} -C ./libft fclean
+	@rm -f $(NAME)
 
 re: fclean all
 
