@@ -3,36 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:18:25 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/26 23:52:36 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/27 15:22:42 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// static int  show_error(void);
-
 int	check_errors(char *argv[])
 {
 	size_t	i;
+	size_t j;
+	int *numbers;
 
 	i = 1;
+	j = 0;
+	//numbers = asignar memoria suficiente (el total de argv * sizeof(int) (+1???????????)
 	while (argv[i])
 	{
-		if ((ft_atoll(argv[i]) > INT_MAX) || ft_atoll(argv[i]) == 0
-			|| check_dup(argv))
+		if (ft_atoll(argv[i]) > INT_MAX || ft_atoll(argv[i]) < INT_MIN) 
 		{
 			ft_printf("Error\n");
 			return (2);
 		}
-		i++;
+		//numbers[j++] = ft_atoi(argv[i++]);
 	}
 	return (0);
 }
 
-int	check_dup(char *argv[])
+int	check_dup(int *numbers)
 {
 	size_t	i;
 	size_t	j;
