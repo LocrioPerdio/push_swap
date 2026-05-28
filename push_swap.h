@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/26 15:38:53 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:55:27 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 
 typedef struct s_stack_node
 {
-	int					*value;
+	int				value;
+	int				index;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 
-}   t_stack_node;
+}					t_stack_node;
 
-char    **ft_split_argv(char const *s, char c);
-int check_errors(char *argv[]);
+int					check_dup(char *argv[]);
+void	show_error(void);
 
 #endif

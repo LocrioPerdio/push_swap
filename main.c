@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/28 16:44:05 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/28 17:57:40 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ PREGUNTAR:
 int				is_sign(char *argv);
 t_stack_node	*init(char *argv[]);
 int				valid_input(char *argv[]);
+void	show_error(void);
 
 int	main(int argc, char *argv[])
 {
@@ -49,8 +50,7 @@ t_stack_node	*init(char *argv[])
 	n = 0;
 	a = NULL;
 	arg = NULL;
-	if (valid_input(argv))
-		printf("aqui");
+	valid_input(argv);
 	while (argv[i])
 	{
 		arg = ft_split(argv[i], ' ');
@@ -58,16 +58,12 @@ t_stack_node	*init(char *argv[])
 		{
 			n = atoi(*arg);
 			if (n > INT_MAX || n < INT_MIN)
-			{
-				ft_printf("Error\n");
-				exit(EXIT_FAILURE);
-			}
+				show_error;
+			arg++;
 			//create_node(n);
 		}
-		
-		printf("%ld\n", n);
 		i++;
-	}
+}
 	return (a);
 }
 
@@ -88,10 +84,7 @@ int	valid_input(char *argv[])
 				|| argv[i][j] == ' ' || ft_isdigit(argv[i][j]))
 				j++;
 			else
-			{
-				ft_printf("Error\n");
-				exit(EXIT_FAILURE);
-			}
+				show_error;
 		}
 		i++;
 	}
