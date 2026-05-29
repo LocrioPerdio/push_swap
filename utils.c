@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 21:16:49 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/29 21:31:50 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/29 22:27:09 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,4 @@ int	ft_atoi_ps(const char *nptr, t_stack_node **a)
 	}
 	return ((int)sign * res);
 }
+

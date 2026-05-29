@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/29 21:42:02 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/29 23:16:49 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int	main(int argc, char *argv[])
 		return (1);
 	valid_input(argv + 1);
 	a = init(argv + 1);
-	if (!a)
-		return (1);
+	printf("%d\n", total_pairs(&a));
+	//if (!a)
+	//	return (1);
 	return (0);
 }
 
