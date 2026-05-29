@@ -6,12 +6,11 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/29 17:47:40 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/29 21:42:02 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int				is_sign(char *argv);
 t_stack_node	*init(char *argv[]);
@@ -38,10 +37,9 @@ t_stack_node	*init(char *argv[])
 	size_t			i;
 	char			**arg;
 	char			**tmp;
-	long			n;
 
+	a = NULL;
 	i = 0;
-	n = 0;
 	arg = NULL;
 	while (argv[i])
 	{
@@ -49,15 +47,12 @@ t_stack_node	*init(char *argv[])
 		tmp = arg;
 		while (*tmp)
 		{
-			n = ft_atoi(*tmp);
-			if (n > INT_MAX || n < INT_MIN)
-				show_error(NULL);
-			create_stack(&a, (int)n);
+			create_stack(&a, ft_atoi_ps(*tmp, &a));
 			tmp++;
 		}
+		free_matrix(arg);
 		i++;
 	}
-	free_matrix(arg);
 	return (a);
 }
 
@@ -83,6 +78,7 @@ int	valid_input(char *argv[])
 		}
 		i++;
 	}
+
 	return (1);
 }
 
