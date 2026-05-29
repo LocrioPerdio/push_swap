@@ -3,7 +3,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRC = \
 	main.c \
-	ft_split_argv.c \
 	check_errors.c \
 
 OBJ = $(SRC:.c=.o)

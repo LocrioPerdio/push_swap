@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/28 17:55:27 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/29 10:40:32 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ typedef struct s_stack_node
 
 }					t_stack_node;
 
-int					check_dup(char *argv[]);
+int		check_dup(char *argv[]);
 void	show_error(void);
+
+/*Lists*/
+
+t_stack_node	*new_node(void *content);
 
 #endif
