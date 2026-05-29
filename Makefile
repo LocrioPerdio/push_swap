@@ -4,6 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = \
 	main.c \
 	check_errors.c \
+	create_stack.c \
 
 OBJ = $(SRC:.c=.o)
 
