@@ -6,12 +6,12 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/29 17:06:13 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/29 17:47:40 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 int				is_sign(char *argv);
 t_stack_node	*init(char *argv[]);
@@ -25,7 +25,7 @@ int	main(int argc, char *argv[])
 	a = NULL;
 	if (argc < 2)
 		return (1);
-	valid_input(argv);
+	valid_input(argv + 1);
 	a = init(argv + 1);
 	if (!a)
 		return (1);
@@ -72,9 +72,11 @@ int	valid_input(char *argv[])
 		j = 0;
 		while (argv[i][j])
 		{
-			if (is_sign(&argv[i][0]) || (is_sign(&argv[i][j])
-					&& ft_isdigit(argv[i][j + 1]) && argv[i][j - 1] == ' ')
-				|| argv[i][j] == ' ' || ft_isdigit(argv[i][j]))
+			if (ft_isdigit(argv[i][j]) || argv[i][j] == ' ')
+				j++;
+			else if (is_sign(&argv[i][j])
+				&& (j == 0 || argv[i][j - 1] == ' ')
+				&& ft_isdigit(argv[i][j + 1]))
 				j++;
 			else
 				show_error(NULL);

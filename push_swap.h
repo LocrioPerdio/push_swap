@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/29 17:06:57 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/29 17:26:18 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ typedef struct s_stack_node
 
 }					t_stack_node;
 
-int		check_dup(char *argv[]);
-void	show_error(void);
+
+
 
 
 /*Create stack*/
 
-t_stack_node	*create_stack(t_stack_node **a, int n);
+void	create_stack(t_stack_node **a, int n);
 t_stack_node	*new_node(int value);
 void			add_node_back(t_stack_node **a, t_stack_node *new);
 
 /*Errors and free*/
 
-void	show_error(void);
+void	show_error(t_stack_node **stack);
 int	check_dup(t_stack_node *stack, int n);
 void	free_stack(t_stack_node **stack);
 void free_matrix(char **matrix);

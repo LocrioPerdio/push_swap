@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:18:25 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/29 17:06:46 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/29 17:16:35 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_dup(t_stack_node *stack, int n)
 	while (stack)
 	{
 		if (stack->value == n)
-			show_error();
+			show_error(NULL);
 		stack = stack->next;
 	}
 	return (0);
@@ -41,8 +41,8 @@ void	free_stack(t_stack_node **stack)
 	while(*stack)
 	{
 		tmp = (*stack)->next;
-		free(stack);
-		stack = tmp;
+		free(*stack);
+		*stack = tmp;
 	}
 }
 
