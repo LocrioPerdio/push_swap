@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/29 23:32:15 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/30 11:54:29 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack_node	*new_node(int value);
 void			add_node_back(t_stack_node **a, t_stack_node *new);
 // float disorder_index(t_stack_node **a);
 int				stack_size(t_stack_node *a);
-int				total_pairs(t_stack_node **a);
+float			total_pairs(t_stack_node **a);
 
 void	create_stack(t_stack_node **a, int n)
 {
@@ -64,29 +64,33 @@ void	add_node_back(t_stack_node **a, t_stack_node *new)
 float	disorder_index(t_stack_node **a)
 {
 	int		mistakes;
-	size_t	i;
-	size_t	j;
+	//int		i;
+	//int		j;
 	float	res;
+	t_stack_node *tmp;
 
 	mistakes = 0.00;
-	i = 0;
+	//i = 0;
 	res = 0.00;
-	while (*a)
+	tmp = *a;
+	while (tmp->next)
 	{
-		j = i + 1;
-		if ()
+		if (tmp->value > (tmp + 1)->value)
+			mistakes += 1;
+		tmp = tmp->next;
 	}
-	res = mistakes / total_pairs(&a);
+	res = mistakes / total_pairs(a);
+	printf("%f\n", res);
 	return (res);
 }
 
-
+// puede simplificarse mucho con (len * (len - 1)) / 2
 float	total_pairs(t_stack_node **a)
 {
-	int		res;
-	int		len;
-	int		i;
-	int		j;
+	int	res;
+	int	len;
+	int	i;
+	int	j;
 
 	len = stack_size(*a);
 	res = 0;
