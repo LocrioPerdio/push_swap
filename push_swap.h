@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/30 11:31:47 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/31 21:16:54 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack_node
 void					create_stack(t_stack_node **a, int n);
 t_stack_node			*new_node(int value);
 void					add_node_back(t_stack_node **a, t_stack_node *new);
-float					total_pairs(t_stack_node **a);
+int					total_pairs(t_stack_node **a);
 float					disorder_index(t_stack_node **a);
 
 /*Errors and free*/
