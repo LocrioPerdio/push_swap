@@ -6,6 +6,8 @@ SRC = \
 	check_errors.c \
 	create_stack.c \
 	utils.c \
+	operations.c \
+	DELETE.c \
 
 OBJ = $(SRC:.c=.o)
 

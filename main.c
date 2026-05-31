@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/30 11:33:36 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/31 22:16:48 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ int	main(int argc, char *argv[])
 		return (1);
 	valid_input(argv + 1);
 	a = init(argv + 1);
-	//if (!a)
+	//if (!a) (THIS IS NEEDED?)
 	//	return (1);
-	printf("%f", disorder_index(&a));
+	//printf("%f", disorder_index(&a));
+	print_stack(&a);
+	swap_a(&a);
+	print_stack(&a);
 	return (0);
 }
 

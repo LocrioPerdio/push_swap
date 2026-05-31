@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/31 21:47:18 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/05/31 21:59:22 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 t_stack_node	*new_node(int value);
 void			add_node_back(t_stack_node **a, t_stack_node *new);
 // float disorder_index(t_stack_node **a);
-int				stack_size(t_stack_node *a);
 int			total_pairs(t_stack_node **a);
 
 void	create_stack(t_stack_node **a, int n)
@@ -113,17 +112,4 @@ int	total_pairs(t_stack_node **a)
 	return (res);
 }
 
-int	stack_size(t_stack_node *a)
-{
-	int				count;
-	t_stack_node	*ptr;
 
-	count = 0;
-	ptr = a;
-	while (ptr)
-	{
-		count++;
-		ptr = ptr->next;
-	}
-	return (count);
-}
