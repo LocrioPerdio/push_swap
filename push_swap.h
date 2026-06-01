@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/01 11:00:34 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/01 11:40:07 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,9 @@ void					free_matrix(char **matrix);
 int						ft_atoi_ps(const char *nptr, t_stack_node **a);
 int						stack_size(t_stack_node *a);
 
-/*Operations*/
+/* Swap operations*/
 
+void					swap(t_stack_node **a);
 void					swap_a(t_stack_node **a);
 void					swap_b(t_stack_node **a);
 void					swap_ss(t_stack_node **a, t_stack_node **b);

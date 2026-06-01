@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/31 21:59:22 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/01 11:43:36 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_stack_node	*new_node(int value);
 void			add_node_back(t_stack_node **a, t_stack_node *new);
-// float disorder_index(t_stack_node **a);
-int			total_pairs(t_stack_node **a);
+//float			disorder_index(t_stack_node **a);
+//int				total_pairs(t_stack_node **a);
 
 void	create_stack(t_stack_node **a, int n)
 {
@@ -60,32 +60,6 @@ void	add_node_back(t_stack_node **a, t_stack_node *new)
 	new->prev = ptr;
 }
 
-float	disorder_index(t_stack_node **a)
-{
-	int		mistakes;
-	int		pairs;
-	t_stack_node *tmp;
-	t_stack_node	*next;
-
-	mistakes = 0;
-	pairs = total_pairs(a);
-	tmp = *a;
-	while (tmp)
-	{
-		next = tmp->next;
-		while (next)
-		{
-			if (tmp->value > next->value)
-				mistakes ++;
-			next = next->next;
-		}
-		tmp = tmp->next;
-	}
-	if (pairs == 0)
-		return (0);
-	return ((float)mistakes / pairs);
-}
-
 // puede simplificarse mucho con (len * (len - 1)) / 2
 int	total_pairs(t_stack_node **a)
 {
@@ -112,4 +86,28 @@ int	total_pairs(t_stack_node **a)
 	return (res);
 }
 
+float	disorder_index(t_stack_node **a)
+{
+	int				mistakes;
+	int				pairs;
+	t_stack_node	*tmp;
+	t_stack_node	*next;
 
+	mistakes = 0;
+	pairs = total_pairs(a);
+	tmp = *a;
+	while (tmp)
+	{
+		next = tmp->next;
+		while (next)
+		{
+			if (tmp->value > next->value)
+				mistakes++;
+			next = next->next;
+		}
+		tmp = tmp->next;
+	}
+	if (pairs == 0)
+		return (0);
+	return ((float)mistakes / pairs);
+}
