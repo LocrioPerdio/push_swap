@@ -2,10 +2,13 @@
 
 void	print_stack(t_stack_node **a)
 {
-	while (*a)
+	t_stack_node	*tmp;
+
+	tmp = *a;
+	while (tmp)
 	{
-		ft_printf("%d ", (*a)->value);
-		*a = (*a)->next;
+		ft_printf("%d ", tmp->value);
+		tmp = tmp->next;
 	}
     ft_printf("\n");
 }

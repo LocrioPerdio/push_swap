@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/31 22:19:17 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/01 11:00:34 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include <stdio.h>
 
 typedef struct s_stack_node
 {
@@ -48,9 +47,11 @@ int						stack_size(t_stack_node *a);
 /*Operations*/
 
 void					swap_a(t_stack_node **a);
+void					swap_b(t_stack_node **a);
+void					swap_ss(t_stack_node **a, t_stack_node **b);
 
 /*DELETE (debugging)*/
 
-void					print_stack(t_stack_node **a);
+void print_stack(t_stack_node **a);
 
 #endif

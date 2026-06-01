@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/31 22:16:48 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/01 10:47:02 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ int	main(int argc, char *argv[])
 		return (1);
 	valid_input(argv + 1);
 	a = init(argv + 1);
-	//if (!a) (THIS IS NEEDED?)
+	//if (!a) (IS THIS NEEDED?)
 	//	return (1);
 	//printf("%f", disorder_index(&a));
 	print_stack(&a);
 	swap_a(&a);
+	printf("\n");
 	print_stack(&a);
 	return (0);
 }
