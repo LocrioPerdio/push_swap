@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 22:07:52 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 22:54:20 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void					create_stack(t_stack_node **a, int n);
 t_stack_node			*new_node(int value);
 void					add_node_back(t_stack_node **a, t_stack_node *new);
 void					add_node_front(t_stack_node **a, t_stack_node *new);
-//void					assign_index()
+void					assign_index(t_stack_node *a);
 
 /* Errors and free */
 
@@ -66,8 +66,11 @@ void					rotate_a(t_stack_node **a);
 void					rotate_b(t_stack_node **b);
 void					rotate_rr(t_stack_node **a, t_stack_node **b);
 
+/* Reverse rotate operations */
+
 /*DELETE (debugging)*/
 
 void					print_stack(t_stack_node **a);
+void 					print_index(t_stack_node **a);
 
 #endif

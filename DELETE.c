@@ -12,3 +12,16 @@ void	print_stack(t_stack_node **a)
 	}
     ft_printf("\n");
 }
+
+void print_index(t_stack_node **a)
+{
+	t_stack_node	*tmp;
+
+	tmp = *a;
+	while (tmp)
+	{
+		ft_printf("%d ", tmp->index);
+		tmp = tmp->next;
+	}
+    ft_printf("\n");
+}
