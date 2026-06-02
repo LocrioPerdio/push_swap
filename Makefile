@@ -9,6 +9,7 @@ SRC = \
 	swap_op.c \
 	rotate_op.c \
 	push_op.c \
+	complex_alg.c \
 	DELETE.c \
 
 OBJ = $(SRC:.c=.o)

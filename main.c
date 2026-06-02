@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 22:55:08 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 23:07:57 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int				is_sign(char c);
 t_stack_node	*init(char *argv[]);
 int				valid_input(char *argv[]);
 
+//llamamos a "assign_index desde el main o desde el init???"
 
 int	main(int argc, char *argv[])
 {
@@ -29,9 +30,8 @@ int	main(int argc, char *argv[])
 	if (!a) //(IS THIS NEEDED?)
 		return (1);
 	//printf("%f", disorder_index(&a));
-	assign_index(a);
-	print_stack(&a);
-	print_index(&a);
+	//print_stack(&a);
+	//print_index(&a);
 	return (0);
 }
 
@@ -57,6 +57,7 @@ t_stack_node	*init(char *argv[])
 		free_matrix(arg);
 		i++;
 	}
+	assign_index(a);
 	return (a);
 }
 
