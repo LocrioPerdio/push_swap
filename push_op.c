@@ -6,12 +6,12 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:47:38 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/01 11:49:57 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 16:12:43 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-pa (push a): Toma el primer elemento del stack b y lo coloca 
+pa (push a): Toma el primer elemento del stack b y lo coloca
 el primero en el stack a.
 No hace nada si b está vacío.
 pb (push b): Toma el primer elemento del stack a y lo coloca
@@ -21,7 +21,29 @@ No hace nada si a está vacío.
 
 #include "push_swap.h"
 
-void push(t_stack_node **a, t_stack_node **b)
+void	push(t_stack_node **a, t_stack_node **b)
 {
-    
+	t_stack_node	*first_b;
+	t_stack_node	*second_b;
+
+	if (!*b)
+		return ;
+	first_b = *b;
+	second_b = first_b->next;
+	add_node_front(a, first_b);
+	second_b->prev = NULL;
+	// free()??
+	*b = second_b;
+}
+
+void	push_a(t_stack_node **a, t_stack_node **b)
+{
+	push(a, b);
+	ft_printf("pa\n");
+}
+
+void	push_b(t_stack_node **a, t_stack_node **b)
+{
+	push(b, a);
+	ft_printf("pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 12:51:04 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 13:27:49 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,4 @@ void	add_node_front(t_stack_node **lst, t_stack_node *new)
 	new->prev = NULL;
 	*lst = new;
 }
+   

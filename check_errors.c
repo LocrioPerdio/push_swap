@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:18:25 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/29 17:16:35 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 15:53:49 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void free_matrix(char **matrix)
 
 	i = 0;
 	if (!matrix)
-		return;
-	while(matrix[i])
+		return ;
+	while (matrix[i])
 	{
 		free(matrix[i]);
 		i++;

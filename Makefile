@@ -8,6 +8,7 @@ SRC = \
 	utils.c \
 	swap_op.c \
 	rotate_op.c \
+	push_op.c \
 	DELETE.c \
 
 OBJ = $(SRC:.c=.o)
