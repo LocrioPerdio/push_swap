@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 21:55:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 12:18:47 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 22:06:36 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	swap_a(t_stack_node **a)
 	ft_printf("sa\n");
 }
 
-void	swap_b(t_stack_node **a)
+void	swap_b(t_stack_node **b)
 {
-	swap(a);
+	swap(b);
 	ft_printf("sb\n");
 }
 

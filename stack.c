@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 13:27:49 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 22:04:28 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,11 @@ void	add_node_back(t_stack_node **a, t_stack_node *new)
 	new->prev = ptr;
 }
 
-void	add_node_front(t_stack_node **lst, t_stack_node *new)
+void	add_node_front(t_stack_node **a, t_stack_node *new)
 {
-	if (!lst || !new)
+	if (!a || !new)
 		return ;
-	new->next = *lst;
+	new->next = *a;
 	new->prev = NULL;
-	*lst = new;
+	*a = new;
 }
-   

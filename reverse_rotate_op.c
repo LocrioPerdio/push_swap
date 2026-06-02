@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_op.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 16:06:08 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/02 12:20:22 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 22:05:49 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void	reverse_rotate_a(t_stack_node **a)
 	ft_printf("rra\n");
 }
 
-void	reverse_rotate_b(t_stack_node **a)
+void	reverse_rotate_b(t_stack_node **b)
 {
-	reverse_rotate(a);
+	reverse_rotate(b);
 	ft_printf("rrb\n");
 }
 

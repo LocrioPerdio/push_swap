@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 16:43:42 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 21:59:50 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int				is_sign(char *argv);
+int				is_sign(char c);
 t_stack_node	*init(char *argv[]);
 int				valid_input(char *argv[]);
 
@@ -26,8 +26,8 @@ int	main(int argc, char *argv[])
 		return (1);
 	valid_input(argv + 1);
 	a = init(argv + 1);
-	//if (!a) (IS THIS NEEDED?)
-	//	return (1);
+	if (!a) //(IS THIS NEEDED?)
+		return (1);
 	//printf("%f", disorder_index(&a));
 	return (0);
 }
@@ -70,7 +70,7 @@ int	valid_input(char *argv[])
 		{
 			if (ft_isdigit(argv[i][j]) || argv[i][j] == ' ')
 				j++;
-			else if (is_sign(&argv[i][j])
+			else if (is_sign(argv[i][j])
 				&& (j == 0 || argv[i][j - 1] == ' ')
 				&& ft_isdigit(argv[i][j + 1]))
 				j++;
@@ -83,7 +83,7 @@ int	valid_input(char *argv[])
 	return (1);
 }
 
-int	is_sign(char *argv)
+int	is_sign(char c)
 {
-	return (argv[0] == '+' || argv[0] == '-');
+	return (c == '+' || c == '-');
 }

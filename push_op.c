@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:47:38 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 16:39:14 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 21:54:51 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	push(t_stack_node **a, t_stack_node **b)
 	if (!*b)
 		return ;
 	first_b = *b;
-		if (first_b->next)
+	if (first_b->next)
 	{
 		second_b = first_b->next;
 		second_b->prev = NULL;

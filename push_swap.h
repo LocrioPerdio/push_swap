@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 16:19:40 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 22:07:52 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ typedef struct s_stack_node
 void					create_stack(t_stack_node **a, int n);
 t_stack_node			*new_node(int value);
 void					add_node_back(t_stack_node **a, t_stack_node *new);
-void					add_node_front(t_stack_node **lst, t_stack_node *new);
+void					add_node_front(t_stack_node **a, t_stack_node *new);
+//void					assign_index()
 
 /* Errors and free */
 
@@ -49,7 +50,7 @@ float					disorder_index(t_stack_node **a);
 
 void					swap(t_stack_node **a);
 void					swap_a(t_stack_node **a);
-void					swap_b(t_stack_node **a);
+void					swap_b(t_stack_node **b);
 void					swap_ss(t_stack_node **a, t_stack_node **b);
 
 /* Push operations */
@@ -62,7 +63,7 @@ void					push_b(t_stack_node **a, t_stack_node **b);
 
 void					rotate(t_stack_node **a);
 void					rotate_a(t_stack_node **a);
-void					rotate_b(t_stack_node **a);
+void					rotate_b(t_stack_node **b);
 void					rotate_rr(t_stack_node **a, t_stack_node **b);
 
 /*DELETE (debugging)*/
