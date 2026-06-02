@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_op.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 16:06:08 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/01 16:49:51 by lbiosca-         ###   ########.fr       */
+/*   Updated: 2026/06/02 12:20:22 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,18 @@ void	reverse_rotate(t_stack_node **a)
 void	reverse_rotate_a(t_stack_node **a)
 {
 	reverse_rotate(a);
-	printf("rra ");
+	ft_printf("rra\n");
 }
 
 void	reverse_rotate_b(t_stack_node **a)
 {
 	reverse_rotate(a);
-	printf("rrb ");
+	ft_printf("rrb\n");
 }
 
 void	reverse_rotate_rr(t_stack_node **a, t_stack_node **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	printf("rrr ");
+	ft_printf("rrr\n");
 }
