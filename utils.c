@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 21:16:49 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/31 21:58:52 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 12:44:29 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,56 @@ int	stack_size(t_stack_node *a)
 		ptr = ptr->next;
 	}
 	return (count);
+}
+
+// puede simplificarse mucho con (len * (len - 1)) / 2
+int	total_pairs(t_stack_node **a)
+{
+	int	res;
+	int	len;
+	int	i;
+	int	j;
+
+	len = stack_size(*a);
+	res = 0;
+	i = 0;
+	if (len == 1)
+		return (0);
+	while (i < len)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			res += 1;
+			j++;
+		}
+		i++;
+	}
+	return (res);
+}
+
+float	disorder_index(t_stack_node **a)
+{
+	int				mistakes;
+	int				pairs;
+	t_stack_node	*tmp;
+	t_stack_node	*next;
+
+	mistakes = 0;
+	pairs = total_pairs(a);
+	tmp = *a;
+	while (tmp)
+	{
+		next = tmp->next;
+		while (next)
+		{
+			if (tmp->value > next->value)
+				mistakes++;
+			next = next->next;
+		}
+		tmp = tmp->next;
+	}
+	if (pairs == 0)
+		return (0);
+	return ((float)mistakes / pairs);
 }

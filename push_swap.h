@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/01 11:40:07 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 12:49:23 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ typedef struct s_stack_node
 
 }						t_stack_node;
 
-/*Create stack*/
+/*Handle stack*/
 
 void					create_stack(t_stack_node **a, int n);
 t_stack_node			*new_node(int value);
 void					add_node_back(t_stack_node **a, t_stack_node *new);
-int						total_pairs(t_stack_node **a);
-float					disorder_index(t_stack_node **a);
+void					add_node_front(t_stack_node **lst, t_stack_node *new);
+
 
 /*Errors and free*/
 
@@ -43,6 +43,8 @@ void					free_matrix(char **matrix);
 
 int						ft_atoi_ps(const char *nptr, t_stack_node **a);
 int						stack_size(t_stack_node *a);
+int						total_pairs(t_stack_node **a);
+float					disorder_index(t_stack_node **a);
 
 /* Swap operations*/
 
@@ -51,8 +53,15 @@ void					swap_a(t_stack_node **a);
 void					swap_b(t_stack_node **a);
 void					swap_ss(t_stack_node **a, t_stack_node **b);
 
+/* Rotate operations*/
+
+void					rotate(t_stack_node **a);
+void					rotate_a(t_stack_node **a);
+void					rotate_b(t_stack_node **a);
+void					rotate_rr(t_stack_node **a, t_stack_node **b);
+
 /*DELETE (debugging)*/
 
-void print_stack(t_stack_node **a);
+void					print_stack(t_stack_node **a);
 
 #endif

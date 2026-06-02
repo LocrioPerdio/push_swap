@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/01 10:47:02 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/02 12:33:49 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char *argv[])
 	//	return (1);
 	//printf("%f", disorder_index(&a));
 	print_stack(&a);
-	swap_a(&a);
+	rotate_a(&a);
 	printf("\n");
 	print_stack(&a);
 	return (0);
