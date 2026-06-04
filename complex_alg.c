@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/04 15:58:10 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/04 19:44:51 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ mientras haya bits:
 
 void	radix_sort(t_stack_node **a)
 {
-	t_stack_node	**b;
+	t_stack_node	*b;
 	size_t			bit;
 	size_t			max_bits;
 	size_t			size;
@@ -59,21 +59,20 @@ void	radix_sort(t_stack_node **a)
 	b = NULL;
 	bit = 0;
 	max_bits = get_max_bits(a);
-	size = stack_size(*a) - 1;
+	size = stack_size(*a);
 	while (bit < max_bits)
 	{
 		i = 0;
-		while (i <= size)
+		while (i < size)
 		{
-			if (((*a)->index & 1) == 0)
-				push_b(a, b);
+			if ((((*a)->index >> bit) & 1) == 0)
+				push_b(a, &b);
 			else
 				rotate_a(a);
 			i++;
 		}
-		printf("holi");
 		while (b)
-			push_a(a, b);
+			push_a(a, &b);
 		bit++;
 	}
 }
@@ -91,12 +90,13 @@ size_t	get_bits(size_t n)
 	return (count);
 }
 
+
 size_t	get_max_bits(t_stack_node **a)
 {
 	size_t	max_bits;
 	size_t	max_index;
 
-	max_index = assign_index(*a);
+	max_index =(size_t)stack_size(*a) - 1;
 	max_bits = get_bits(max_index);
 	return (max_bits);
 }

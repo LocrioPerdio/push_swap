@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/04 12:13:58 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/04 19:31:36 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	add_node_front(t_stack_node **a, t_stack_node *new)
 	*a = new;
 }
 
-size_t	assign_index(t_stack_node *a)
+void	assign_index(t_stack_node *a)
 {
 	t_stack_node	*current;
 	t_stack_node	*tmp;
@@ -88,7 +88,6 @@ size_t	assign_index(t_stack_node *a)
 		current->index = index;
 		current = current->next;
 	}
-	return (index);
 }
 
 

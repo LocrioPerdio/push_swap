@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/04 13:25:49 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/04 19:32:24 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void					create_stack(t_stack_node **a, int n);
 t_stack_node			*new_node(int value);
 void					add_node_back(t_stack_node **a, t_stack_node *new);
 void					add_node_front(t_stack_node **a, t_stack_node *new);
-size_t					assign_index(t_stack_node *a);
+void					assign_index(t_stack_node *a);
 
 /* Errors and free */
 

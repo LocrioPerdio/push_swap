@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/04 15:59:21 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/04 19:39:54 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,17 @@ int	main(int argc, char *argv[])
 	valid_input(argv + 1);
 	a = init(argv + 1);
 	
-	//if (!a) //(IS THIS NEEDED?)
-	//	return (1);
+	if (!a) //(IS THIS NEEDED?)
+		return (1);
 	//printf("%f", disorder_index(&a));
 	//write (1, "This program will segfault", 28);
 	print_stack(&a);
 	print_stack(&b);
+	print_index(&a);
 	radix_sort(&a);
 	print_stack(&a);
 	print_stack(&b);
-	print_stack(&a);
+	
 	return (0);
 }
 
