@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/04 13:33:36 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/04 15:59:21 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ int				valid_input(char *argv[]);
 int	main(int argc, char *argv[])
 {
 	t_stack_node	*a;
+	t_stack_node	*b;
 
 	a = NULL;
+	b = NULL;
 	if (argc < 2)
 		return (1);
 	valid_input(argv + 1);
@@ -33,7 +35,10 @@ int	main(int argc, char *argv[])
 	//printf("%f", disorder_index(&a));
 	//write (1, "This program will segfault", 28);
 	print_stack(&a);
+	print_stack(&b);
 	radix_sort(&a);
+	print_stack(&a);
+	print_stack(&b);
 	print_stack(&a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/04 14:22:05 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/04 15:58:10 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ mientras haya bits:
 
 		repetir size veces
 
-			si el bit actual del primer nodo es 0
+			si el bit actual del primer nodo es 0// if (((*a)->index & 1) == 0)???
 				pb
 			si no
 				ra
@@ -63,7 +63,7 @@ void	radix_sort(t_stack_node **a)
 	while (bit < max_bits)
 	{
 		i = 0;
-		while (i < size)
+		while (i <= size)
 		{
 			if (((*a)->index & 1) == 0)
 				push_b(a, b);
@@ -71,7 +71,8 @@ void	radix_sort(t_stack_node **a)
 				rotate_a(a);
 			i++;
 		}
-		while (*b)
+		printf("holi");
+		while (b)
 			push_a(a, b);
 		bit++;
 	}
