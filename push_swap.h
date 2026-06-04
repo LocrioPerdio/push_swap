@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 22:54:20 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/04 13:25:49 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 typedef struct s_stack_node
 {
 	int					value;
-	int					index;
+	size_t				index;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 
@@ -30,7 +30,7 @@ void					create_stack(t_stack_node **a, int n);
 t_stack_node			*new_node(int value);
 void					add_node_back(t_stack_node **a, t_stack_node *new);
 void					add_node_front(t_stack_node **a, t_stack_node *new);
-void					assign_index(t_stack_node *a);
+size_t					assign_index(t_stack_node *a);
 
 /* Errors and free */
 
@@ -66,11 +66,17 @@ void					rotate_a(t_stack_node **a);
 void					rotate_b(t_stack_node **b);
 void					rotate_rr(t_stack_node **a, t_stack_node **b);
 
+/* Complex algorithm (Radix Sort) */
+
+void					radix_sort(t_stack_node **a);
+size_t					get_bits(size_t n);
+size_t					get_max_bits(t_stack_node **a);
+
 /* Reverse rotate operations */
 
 /*DELETE (debugging)*/
 
 void					print_stack(t_stack_node **a);
-void 					print_index(t_stack_node **a);
+void					print_index(t_stack_node **a);
 
 #endif
