@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/04 19:32:24 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:37:00 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,18 @@ void					rotate_a(t_stack_node **a);
 void					rotate_b(t_stack_node **b);
 void					rotate_rr(t_stack_node **a, t_stack_node **b);
 
+/* Reverse rotate operations */
+
+void					reverse_rotate(t_stack_node **a);
+void					reverse_rotate_a(t_stack_node **a);
+void					reverse_rotate_b(t_stack_node **b);
+void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b);
+
 /* Complex algorithm (Radix Sort) */
 
 void					radix_sort(t_stack_node **a);
 size_t					get_bits(size_t n);
 size_t					get_max_bits(t_stack_node **a);
-
-/* Reverse rotate operations */
 
 /*DELETE (debugging)*/
 

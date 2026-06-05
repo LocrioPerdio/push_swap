@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/05 11:17:12 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:25:06 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_stack_node	*init(char *argv[]);
 int				valid_input(char *argv[]);
 
 //llamamos a "assign_index desde el main o desde el init???"
+//TODO: implementar funcion para comprobar si el stack ya esta ordenado
+// antes de llamar a algoritmo
 
 int	main(int argc, char *argv[])
 {

@@ -8,8 +8,10 @@ SRC = \
 	utils.c \
 	swap_op.c \
 	rotate_op.c \
+	reverse_rotate_op.c \
 	push_op.c \
 	complex_alg.c \
+	medium_alg.c \
 	DELETE.c \
 
 OBJ = $(SRC:.c=.o)
