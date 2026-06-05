@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/05 12:37:00 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/05 12:44:34 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,12 @@ void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b);
 void					radix_sort(t_stack_node **a);
 size_t					get_bits(size_t n);
 size_t					get_max_bits(t_stack_node **a);
+
+/* Medium algorithm (Chunk sort??) */
+
+void					medium_alg(t_stack_node **a);
+void					order_3(t_stack_node **stack);
+t_stack_node			*find_highest(t_stack_node *stack);
 
 /*DELETE (debugging)*/
 
