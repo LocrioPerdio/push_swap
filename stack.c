@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/05 11:14:15 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/05 11:19:58 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	create_stack(t_stack_node **a, int n)
 	if (!node)
 		show_error(a);
 	add_node_back(a, node);
-	
 }
 
 t_stack_node	*new_node(int value)
