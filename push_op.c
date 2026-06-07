@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:47:38 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 21:54:51 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/07 23:48:40 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	push(t_stack_node **a, t_stack_node **b)
 	else
 		*b = NULL;
 	add_node_front(a, first_b);
-	// free()??
 }
 
 void	push_a(t_stack_node **a, t_stack_node **b)

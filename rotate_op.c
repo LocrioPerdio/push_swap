@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:14:13 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/07 23:35:12 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/07 23:47:57 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	rotate(t_stack_node **a)
 	t_stack_node	*second;
 	t_stack_node	*last;
 
-	if (!*a || stack_size(*a) == 1 || !(*a)->next)
+	if (!*a || stack_size(*a) == 1)
 		return ;
 	first = *a;
 	second = first->next;
