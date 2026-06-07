@@ -1,42 +1,51 @@
 #include "push_swap.h"
 
+// // 1. Asignar índices.
 
-// t_stack_node	*find_highest(t_stack_node *stack)
+// // 2. chunk_size = √n
+// //    (o 15 para 100, 30 para 500)
+
+// // 3. Mientras A tenga elementos:
+
+// //       si top(A) pertenece al chunk actual:
+// //             pb
+// //             quizá rb
+// //       si no:
+// //             ra
+
+// // 4. Cuando todos estén en B:
+
+// while (B)
 // {
-// 	int				highest;
-// 	t_stack_node	*highest_node;
-
-// 	if (!stack)
-// 		return (NULL);
-// 	highest = INT_MIN;
-// 	while (stack)
-// 	{
-// 		if (stack->value > highest)
-// 		{
-// 			highest = stack->value;
-// 			highest_node = stack;
-// 		}
-// 		stack = stack->next;
-// 	}
-// 	return (highest_node);
+// 	encontrar el mayor índice de B llevarlo arriba pa
 // }
 
-// void	order_3(t_stack_node **stack)
-// {
-// 	t_stack_node	*highest_node;
+// //       mientras B no esté vacía:
+// //             encontrar máximo
+// //             rb o rrb
+// //             pa
 
-// 	highest_node = find_highest(*stack);
-// 	if (*stack == highest_node)
-// 		rotate_a(stack);
-// 	else if ((*stack)->next == highest_node)
-// 		reverse_rotate_a(stack);
-// 	if ((*stack)->value > (*stack)->next->value)
-// 		swap_a(stack);
-// }
-
-int	get_chunk(int nb)
+void	return_stack(t_stack_node **stack, t_stack_node **a)
 {
-	int	result;
+	size_t	s_size;
+	size_t	max_index;
+
+	while (*stack)
+	{
+		s_size = (size_t)stack_size(*stack);
+		max_index = s_size - 1;
+		if ((*stack)->index == max_index)
+			push_a(a, stack);
+		else if ((*stack)->index > s_size / 2)
+			reverse_rotate_b(stack);
+		else
+			rotate_b(stack);
+	}
+}
+
+size_t	chunk_size(size_t nb)
+{
+	size_t	result;
 
 	result = 1;
 	while (result < nb)
@@ -44,33 +53,38 @@ int	get_chunk(int nb)
 		if (result * result == nb)
 			return (result);
 		else if (((result - 1) * (result - 1) < nb) && (result * result > nb))
-            return (result);
+			return (result);
 		else
 			result++;
 	}
 	return (result);
 }
 
-
-void	medium_alg(t_stack_node **a)
+void	chunk_sort(t_stack_node **a)
 {
 	t_stack_node	*b;
+	size_t			start;
+	size_t			end;
+	size_t			s_size;
 	size_t			i;
-	size_t			size;
 
 	b = NULL;
-	i = 0;
-	size = (size_t)(stack_size);
-	while (n < size)
+	start = 0;
+	end = chunk_size((size_t)stack_size(*a));
+	while (*a)
 	{
-		while (i < n)
+		i = 0;
+		s_size = (size_t)(stack_size(*a));
+		while (i < s_size)
 		{
-			push_b(a, &b);
+			if (((*a)->index >= start && (*a)->index <= end))
+				push_b(a, &b);
+			else
+				rotate_a(a);
 			i++;
 		}
-		order_3(&b);
-		while (b)
-			push_a(a, &b);
-		n = 3 + i;
+		start = end + 1;
+		end = start + end;
 	}
+	return_stack(&b, a);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/05 12:42:26 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/07 22:36:04 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char *argv[])
 	print_stack(&a);
 	print_stack(&b);
 	print_index(&a);
-	medium_alg(&a);
+	chunk_sort(&a);
 	print_stack(&a);
 	print_stack(&b);
 	free_stack(&a);

@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 16:06:08 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/02 22:05:49 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/07 23:33:01 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	reverse_rotate(t_stack_node **a)
 	t_stack_node	*last;
 
 	//TODO ver si este if es necesario
-	if (!*a || stack_size(*a) == 1)
+	if (!*a || stack_size(*a) == 1 || !(*a)->next)
 		return ;
 	first = *a;
 	last = ff_lstlast(*a);
