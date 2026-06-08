@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/08 16:42:14 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/08 21:51:38 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	main(int argc, char *argv[])
 {
 	t_stack_node	*a;
 	//static size_t	count;
-	t_stack_node	*b;
+	//t_stack_node	*b;
 
 	a = NULL;
-	b = NULL;
+	//b = NULL;
 	//count = 0;
 	if (argc < 2)
 		return (1);
@@ -50,7 +50,7 @@ int	main(int argc, char *argv[])
 	// push_b(&a, &b);
 	// printf("max index a: %ld\n", get_max_index(&a));
 	// printf("max index b: %ld\n", get_max_index(&b));
-	chunk_sort(&a);
+	choose_alg(&a);
 	//print_stack(&a);
 	//print_stack(&b);
 	// print_index(&a);

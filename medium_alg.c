@@ -1,9 +1,5 @@
 #include "push_swap.h"
 
-// TODO: optimizar incorporando la variable "pos (posicion)" de cada nodo
-// para ver si la posicion del indice maximo esta en la primera o segunda
-// mitad del stack para decidir si hacer rb o rrb
-
 // // 1. Asignar índices.
 
 // // 2. chunk_size = √n
@@ -59,6 +55,8 @@ size_t	get_max_index(t_stack_node **stack)
 	}
 	return (max_index);
 }
+
+//sustituir estas dos funciones por una unica find_max_pos
 
 void	return_stack(t_stack_node **stack, t_stack_node **a)
 {

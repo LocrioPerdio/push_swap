@@ -12,6 +12,7 @@ SRC = \
 	push_op.c \
 	complex_alg.c \
 	medium_alg.c \
+	adaptative_alg.c \
 	DELETE.c \
 
 OBJ = $(SRC:.c=.o)
