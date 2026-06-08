@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/07 22:27:43 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/08 13:59:32 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,13 @@ size_t					get_max_bits(t_stack_node **a);
 void					chunk_sort(t_stack_node **a);
 size_t					chunk_size(size_t nb);
 void					return_stack(t_stack_node **stack, t_stack_node **a);
+size_t					get_max_index(t_stack_node **stack);
 
 /*DELETE (debugging)*/
 
 void					print_stack(t_stack_node **a);
 void					print_index(t_stack_node **a);
+void					print_prev(t_stack_node **a);
+void					print_next(t_stack_node **a);
 
 #endif

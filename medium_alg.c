@@ -25,19 +25,35 @@
 // //             rb o rrb
 // //             pa
 
+size_t	get_max_index(t_stack_node **stack)
+{
+	size_t			max_index;
+	t_stack_node	*tmp;
+
+	max_index = 0;
+	tmp = *stack;
+	while (tmp)
+	{
+		if (tmp->index > max_index)
+			max_index = tmp->index;
+		tmp = tmp->next;
+	}
+	return (max_index);
+}
+
 void	return_stack(t_stack_node **stack, t_stack_node **a)
 {
 	size_t	s_size;
 	size_t	max_index;
 
-	while (*stack)
+	while ((*stack))
 	{
 		s_size = (size_t)stack_size(*stack);
-		max_index = s_size - 1;
+		max_index = get_max_index(stack);
 		if ((*stack)->index == max_index)
 			push_a(a, stack);
-		else if ((*stack)->index > s_size / 2)
-			reverse_rotate_b(stack);
+		// else if ((*stack)->index > s_size / 2)
+		// 	reverse_rotate_b(stack);
 		else
 			rotate_b(stack);
 	}

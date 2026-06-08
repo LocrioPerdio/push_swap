@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/07 22:36:04 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/08 14:08:28 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,22 @@ int	main(int argc, char *argv[])
 	print_stack(&a);
 	print_stack(&b);
 	print_index(&a);
+	// printf("max index a: %ld\n", get_max_index(&a));
+	// printf("max index b: %ld\n", get_max_index(&b));
+	// print_prev(&a);
+	// print_next(&a);
+	//reverse_rotate_a(&a);
+	//push_b(&a, &b);
+	//reverse_rotate_a(&a);
+	// push_b(&a, &b);
+	// printf("max index a: %ld\n", get_max_index(&a));
+	// printf("max index b: %ld\n", get_max_index(&b));
 	chunk_sort(&a);
 	print_stack(&a);
 	print_stack(&b);
+	// print_index(&a);
+	// print_prev(&a);
+	// print_next(&a);
 	free_stack(&a);
 	return (0);
 }
