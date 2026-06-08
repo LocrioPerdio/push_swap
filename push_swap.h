@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/08 13:59:32 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:18:43 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ typedef struct s_stack_node
 {
 	int					value;
 	size_t				index;
+	size_t				pos;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 
@@ -79,12 +80,13 @@ void					radix_sort(t_stack_node **a);
 size_t					get_bits(size_t n);
 size_t					get_max_bits(t_stack_node **a);
 
-/* Medium algorithm (Chunk sort??) */
+/* Medium algorithm (Chunk sort) */
 
 void					chunk_sort(t_stack_node **a);
 size_t					chunk_size(size_t nb);
 void					return_stack(t_stack_node **stack, t_stack_node **a);
 size_t					get_max_index(t_stack_node **stack);
+void					assign_pos(t_stack_node *a);
 
 /*DELETE (debugging)*/
 
@@ -92,5 +94,6 @@ void					print_stack(t_stack_node **a);
 void					print_index(t_stack_node **a);
 void					print_prev(t_stack_node **a);
 void					print_next(t_stack_node **a);
+void					print_pos(t_stack_node **a);
 
 #endif

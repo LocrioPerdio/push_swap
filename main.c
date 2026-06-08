@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/08 14:08:28 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:42:14 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,23 @@ int				valid_input(char *argv[]);
 int	main(int argc, char *argv[])
 {
 	t_stack_node	*a;
+	//static size_t	count;
 	t_stack_node	*b;
 
 	a = NULL;
 	b = NULL;
+	//count = 0;
 	if (argc < 2)
 		return (1);
 	valid_input(argv + 1);
 	a = init(argv + 1);
-	
 	if (!a) //(IS THIS NEEDED?)
 		return (1);
 	//printf("%f", disorder_index(&a));
-	print_stack(&a);
-	print_stack(&b);
-	print_index(&a);
+	//print_stack(&a);
+	//print_stack(&b);
+	//print_index(&a);
+	//print_pos(&a);
 	// printf("max index a: %ld\n", get_max_index(&a));
 	// printf("max index b: %ld\n", get_max_index(&b));
 	// print_prev(&a);
@@ -49,11 +51,10 @@ int	main(int argc, char *argv[])
 	// printf("max index a: %ld\n", get_max_index(&a));
 	// printf("max index b: %ld\n", get_max_index(&b));
 	chunk_sort(&a);
-	print_stack(&a);
-	print_stack(&b);
+	//print_stack(&a);
+	//print_stack(&b);
 	// print_index(&a);
-	// print_prev(&a);
-	// print_next(&a);
+	// print_pos(&a);
 	free_stack(&a);
 	return (0);
 }
@@ -81,6 +82,7 @@ t_stack_node	*init(char *argv[])
 		i++;
 	}
 	assign_index(a);
+	assign_pos(a);
 	return (a);
 }
 

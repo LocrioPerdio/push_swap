@@ -1,5 +1,9 @@
 #include "push_swap.h"
 
+//TODO: optimizar incorporando la variable "pos (posicion)" de cada nodo
+//para ver si la posicion del indice maximo esta en la primera o segunda
+//mitad del stack para decidir si hacer rb o rrb
+
 // // 1. Asignar índices.
 
 // // 2. chunk_size = √n
@@ -24,6 +28,23 @@
 // //             encontrar máximo
 // //             rb o rrb
 // //             pa
+
+
+void	assign_pos(t_stack_node *a)
+{
+	t_stack_node	*current;
+	size_t			pos;
+
+	current = a;
+	pos = 0;
+	while (current)
+	{
+		current->pos = pos;
+		pos++;
+		current = current->next;
+	}
+}
+
 
 size_t	get_max_index(t_stack_node **stack)
 {
@@ -50,10 +71,11 @@ void	return_stack(t_stack_node **stack, t_stack_node **a)
 	{
 		s_size = (size_t)stack_size(*stack);
 		max_index = get_max_index(stack);
+		assign_pos(*stack);
 		if ((*stack)->index == max_index)
 			push_a(a, stack);
-		// else if ((*stack)->index > s_size / 2)
-		// 	reverse_rotate_b(stack);
+		else if ((*stack)->pos < s_size / 2)
+		 	reverse_rotate_b(stack);
 		else
 			rotate_b(stack);
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:47:38 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/07 23:48:40 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/08 15:38:54 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
