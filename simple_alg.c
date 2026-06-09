@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simple_alg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:46:29 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/09 19:04:03 by lbiosca-         ###   ########.fr       */
+/*   Updated: 2026/06/09 21:35:22 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ size_t	get_min_index(t_stack_node **stack)
 	}
 	return (min_index);
 }
+
 void	selection_sort(t_stack_node **a, t_stack_node **b)
 {
 	size_t			s_size;

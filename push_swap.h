@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/09 15:44:24 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/09 21:48:28 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@ void					return_stack(t_stack_node **stack, t_stack_node **a);
 size_t					get_max_index(t_stack_node **stack);
 void					assign_pos(t_stack_node *a);
 size_t					find_max_pos(t_stack_node **stack, size_t max_index);
+
+/* Simple algorithm */
+
+void					selection_sort(t_stack_node **a, t_stack_node **b);
+size_t					get_min_index(t_stack_node **stack);
+size_t					find_min_pos(t_stack_node **stack, size_t min_index);
 
 /* Adaptative algorithm */
 

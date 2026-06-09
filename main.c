@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/09 16:11:16 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/09 21:48:59 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main(int argc, char *argv[])
 	a = init(argv + 1);
 	if (!a)
 		return (1);
-	chunk_sort(&a, &b);
-	//choose_alg(&a, &b);
+	//chunk_sort(&a, &b);
+	choose_alg(&a, &b);
 	//radix_sort(&a, &b);
 	free_stack(&a);
 	return (0);
