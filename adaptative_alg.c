@@ -9,7 +9,13 @@ void	choose_alg(t_stack_node **a)
 		//simple_sort(a);
         printf("casi ordenado");
 	else if (d_index >= 0.2 && d_index < 0.5)
-		chunk_sort(a);
+		{
+			chunk_sort(a);
+			printf("chunk");
+		}
 	else if (d_index >= 0.5)
-		radix_sort(a);
+		{
+			radix_sort(a);
+			printf("radix");
+		}
 }

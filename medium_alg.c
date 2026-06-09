@@ -25,20 +25,20 @@
 // //             rb o rrb
 // //             pa
 
-void	assign_pos(t_stack_node *a)
-{
-	t_stack_node	*current;
-	size_t			pos;
+// void	assign_pos(t_stack_node *a)
+// {
+// 	t_stack_node	*current;
+// 	size_t			pos;
 
-	current = a;
-	pos = 0;
-	while (current)
-	{
-		current->pos = pos;
-		pos++;
-		current = current->next;
-	}
-}
+// 	current = a;
+// 	pos = 0;
+// 	while (current)
+// 	{
+// 		current->pos = pos;
+// 		pos++;
+// 		current = current->next;
+// 	}
+// }
 
 size_t	get_max_index(t_stack_node **stack)
 {
@@ -56,6 +56,23 @@ size_t	get_max_index(t_stack_node **stack)
 	return (max_index);
 }
 
+size_t	find_max_pos(t_stack_node **stack, size_t max_index)
+{
+	size_t	max_pos;
+	t_stack_node	*current;
+
+	max_pos = 0;
+	current = *stack;
+	while(current)
+	{
+		if (current->index == max_index)
+			return(max_pos);
+		current = current->next;
+		max_pos++;
+	}
+		return(0);
+}
+
 //sustituir estas dos funciones por una unica find_max_pos
 
 void	return_stack(t_stack_node **stack, t_stack_node **a)
@@ -63,14 +80,17 @@ void	return_stack(t_stack_node **stack, t_stack_node **a)
 	size_t	s_size;
 	size_t	max_index;
 
+	s_size = (size_t)stack_size(*stack);
+	max_index = get_max_index(stack);
 	while ((*stack))
 	{
-		s_size = (size_t)stack_size(*stack);
-		max_index = get_max_index(stack);
-		assign_pos(*stack);
 		if ((*stack)->index == max_index)
-			push_a(a, stack);
-		else if ((*stack)->pos < s_size / 2)
+			{
+				push_a(a, stack);
+				max_index--;
+				s_size--;
+			}
+		else if (find_max_pos(stack, max_index) > s_size / 2)
 			reverse_rotate_b(stack);
 		else
 			rotate_b(stack);

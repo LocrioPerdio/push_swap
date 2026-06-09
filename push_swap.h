@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/08 21:48:02 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/09 15:15:08 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ size_t					chunk_size(size_t nb);
 void					return_stack(t_stack_node **stack, t_stack_node **a);
 size_t					get_max_index(t_stack_node **stack);
 void					assign_pos(t_stack_node *a);
+size_t					find_max_pos(t_stack_node **stack, size_t max_index);
 
 /* Adaptative algorithm */
 
