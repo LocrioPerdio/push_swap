@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/09 15:15:08 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/09 15:44:24 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b);
 
 /* Complex algorithm (Radix Sort) */
 
-void					radix_sort(t_stack_node **a);
+void					radix_sort(t_stack_node **a, t_stack_node **b);
 size_t					get_bits(size_t n);
 size_t					get_max_bits(t_stack_node **a);
 
 /* Medium algorithm (Chunk sort) */
 
-void					chunk_sort(t_stack_node **a);
+void					chunk_sort(t_stack_node **a, t_stack_node **b);
 size_t					chunk_size(size_t nb);
 void					return_stack(t_stack_node **stack, t_stack_node **a);
 size_t					get_max_index(t_stack_node **stack);
@@ -91,7 +91,7 @@ size_t					find_max_pos(t_stack_node **stack, size_t max_index);
 
 /* Adaptative algorithm */
 
-void					choose_alg(t_stack_node **a);
+void					choose_alg(t_stack_node **a, t_stack_node **b);
 
 /*DELETE (debugging)*/
 

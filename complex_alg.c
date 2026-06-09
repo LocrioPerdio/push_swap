@@ -6,21 +6,19 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/05 11:20:29 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/09 16:08:48 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix_sort(t_stack_node **a)
+void	radix_sort(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node	*b;
-	size_t			bit;
-	size_t			max_bits;
-	size_t			size;
-	size_t			i;
+	size_t	bit;
+	size_t	max_bits;
+	size_t	size;
+	size_t	i;
 
-	b = NULL;
 	bit = 0;
 	max_bits = get_max_bits(a);
 	size = stack_size(*a);
@@ -30,13 +28,13 @@ void	radix_sort(t_stack_node **a)
 		while (i < size)
 		{
 			if ((((*a)->index >> bit) & 1) == 0)
-				push_b(a, &b);
+				push_b(a, b);
 			else
 				rotate_a(a);
 			i++;
 		}
-		while (b)
-			push_a(a, &b);
+		while (*b)
+			push_a(a, b);
 		bit++;
 	}
 }
@@ -54,13 +52,12 @@ size_t	get_bits(size_t n)
 	return (count);
 }
 
-
 size_t	get_max_bits(t_stack_node **a)
 {
 	size_t	max_bits;
 	size_t	max_index;
 
-	max_index =(size_t)stack_size(*a) - 1;
+	max_index = (size_t)stack_size(*a) - 1;
 	max_bits = get_bits(max_index);
 	return (max_bits);
 }
