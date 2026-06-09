@@ -6,8 +6,10 @@ void	choose_alg(t_stack_node **a, t_stack_node **b)
 
 	d_index = disorder_index(a);
 	if (d_index < 0.2)
-		// simple_sort(a);
-		printf("casi ordenado");
+	{
+		selection_sort(a, b);
+		//printf("selection");
+	}
 	else if (d_index >= 0.2 && d_index < 0.5)
 	{
 		chunk_sort(a, b);
