@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_op.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 16:06:08 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/10 14:16:42 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 15:48:01 by lbiosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
