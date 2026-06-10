@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:18:25 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 15:25:15 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 21:15:06 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@ int	check_dup(t_stack_node *stack, int n)
 	while (stack)
 	{
 		if (stack->value == n)
-			show_error(&stack);
+			return (1);
 		stack = stack->next;
 	}
 	return (0);
 }
 
-void	show_error(t_stack_node **stack)
+void	show_error(t_stack_node **stack, char **arg)
 {
+	if (arg)
+		free_matrix(arg);
 	if (stack)
 		free_stack(stack);
 	write(2, "Error\n", 6);

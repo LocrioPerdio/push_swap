@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 21:16:49 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 14:37:41 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 21:35:03 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi_ps(const char *nptr, t_stack_node **a)
+int	ft_atoi_ps(const char *nptr, t_stack_node **a, char **arg)
 {
 	int		i;
 	int		sign;
@@ -33,7 +33,7 @@ int	ft_atoi_ps(const char *nptr, t_stack_node **a)
 	{
 		res = res * 10 + (nptr[i] - 48);
 		if ((sign * res) > INT_MAX || (sign * res) < INT_MIN)
-			show_error(a);
+			show_error(a, arg);
 		i++;
 	}
 	return ((int)sign * res);

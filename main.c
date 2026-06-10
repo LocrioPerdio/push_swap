@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 15:23:25 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 21:36:23 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ static t_stack_node	*init(char *argv[])
 		tmp = arg;
 		while (*tmp)
 		{
-			create_stack(&a, ft_atoi_ps(*tmp, &a));
+			if (create_stack(&a, ft_atoi_ps(*tmp, &a, arg)))
+				show_error(&a, arg);
 			tmp++;
 		}
 		free_matrix(arg);
@@ -77,7 +78,7 @@ static int	valid_input(char *argv[])
 				&& ft_isdigit(argv[i][j + 1]))
 				j++;
 			else
-				show_error(NULL);
+				show_error(NULL, NULL);
 		}
 		i++;
 	}

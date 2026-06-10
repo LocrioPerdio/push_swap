@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 14:49:49 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 21:30:32 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 static t_stack_node	*new_node(int value);
 static void			add_node_back(t_stack_node **a, t_stack_node *new);
 
-void	create_stack(t_stack_node **a, int n)
+int	create_stack(t_stack_node **a, int n)
 {
 	t_stack_node	*node;
 
-	check_dup(*a, n);
+	if (check_dup(*a, n))
+		return (1);
 	node = new_node(n);
 	if (!node)
-		show_error(a);
+		show_error(a, NULL);
 	add_node_back(a, node);
+	return (0);
 }
 
 static t_stack_node	*new_node(int value)
