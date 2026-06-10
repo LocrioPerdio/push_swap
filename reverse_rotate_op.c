@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 16:06:08 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/10 13:07:43 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:16:42 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,9 @@ void	reverse_rotate_b(t_stack_node **b)
 	ft_printf("rrb\n");
 }
 
+void	reverse_rotate_rr(t_stack_node **a, t_stack_node **b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+	ft_printf("rrr\n");
+}

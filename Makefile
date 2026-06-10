@@ -10,10 +10,10 @@ SRC = \
 	rotate_op.c \
 	reverse_rotate_op.c \
 	push_op.c \
-	complex_alg.c \
-	medium_alg.c \
-	adaptative_alg.c \
 	simple_alg.c \
+	medium_alg.c \
+	complex_alg.c \
+	adaptative_alg.c \
 
 OBJ = $(SRC:.c=.o)
 

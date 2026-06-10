@@ -56,7 +56,6 @@ SRC = \
 	ft_puthex_low.c \
 	ft_puthex_up.c \
 	ft_putadress.c \
-	ft_atoll.c \
 
 OBJ = $(SRC:.c=.o)
 

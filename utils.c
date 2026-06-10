@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 21:16:49 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 12:44:29 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:37:41 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,7 @@ int	stack_size(t_stack_node *a)
 	return (count);
 }
 
-// puede simplificarse mucho con (len * (len - 1)) / 2
-int	total_pairs(t_stack_node **a)
+static int	total_pairs(t_stack_node **a)
 {
 	int	res;
 	int	len;
@@ -104,4 +103,16 @@ float	disorder_index(t_stack_node **a)
 	if (pairs == 0)
 		return (0);
 	return ((float)mistakes / pairs);
+}
+
+t_stack_node	*find_last(t_stack_node *lst)
+{
+	t_stack_node	*tmp;
+
+	if (!lst)
+		return (NULL);
+	tmp = lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }

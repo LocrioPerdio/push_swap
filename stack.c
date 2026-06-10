@@ -6,15 +6,14 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 11:13:18 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:49:49 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*new_node(int value);
-void			add_node_back(t_stack_node **a, t_stack_node *new);
-
+static t_stack_node	*new_node(int value);
+static void			add_node_back(t_stack_node **a, t_stack_node *new);
 
 void	create_stack(t_stack_node **a, int n)
 {
@@ -27,7 +26,7 @@ void	create_stack(t_stack_node **a, int n)
 	add_node_back(a, node);
 }
 
-t_stack_node	*new_node(int value)
+static t_stack_node	*new_node(int value)
 {
 	t_stack_node	*n;
 
@@ -41,7 +40,7 @@ t_stack_node	*new_node(int value)
 	return (n);
 }
 
-void	add_node_back(t_stack_node **a, t_stack_node *new)
+static void	add_node_back(t_stack_node **a, t_stack_node *new)
 {
 	t_stack_node	*ptr;
 
@@ -91,5 +90,3 @@ void	assign_index(t_stack_node *a)
 		current = current->next;
 	}
 }
-
-

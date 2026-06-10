@@ -6,29 +6,13 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:46:29 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/10 12:47:53 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:53:45 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t	find_min_pos(t_stack_node **stack, size_t min_index)
-{
-	size_t			min_pos;
-	t_stack_node	*current;
-
-	min_pos = 0;
-	current = *stack;
-	while (current)
-	{
-		if (current->index == min_index)
-			return (min_pos);
-		current = current->next;
-		min_pos++;
-	}
-	return (0);
-}
-
+static size_t	find_min_pos(t_stack_node **stack, size_t min_index);
 
 void	selection_sort(t_stack_node **a, t_stack_node **b)
 {
@@ -52,4 +36,21 @@ void	selection_sort(t_stack_node **a, t_stack_node **b)
 	}
 	while (*b)
 		push_a(a, b);
+}
+
+static size_t	find_min_pos(t_stack_node **stack, size_t min_index)
+{
+	size_t			min_pos;
+	t_stack_node	*current;
+
+	min_pos = 0;
+	current = *stack;
+	while (current)
+	{
+		if (current->index == min_index)
+			return (min_pos);
+		current = current->next;
+		min_pos++;
+	}
+	return (0);
 }

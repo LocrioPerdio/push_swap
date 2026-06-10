@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 11:31:49 by paduarte          #+#    #+#             */
-/*   Updated: 2026/05/07 10:53:55 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 15:11:15 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,20 +106,3 @@ static char	**ft_newarr(char const *s, char c)
 		return (NULL);
 	return (w_array);
 }
-/*
-int main(void)
-{
-
-  char **splitted;
-  int i;
-  
-  i = 0;
-  splitted = ft_split("EstoaTieneaMuchasaVocalesa", 'a');
-  while(splitted[i])
-  {
-    ft_putendl_fd(splitted[i], 1);
-    i++;
-  }    
-  return(0);
-}
-*/

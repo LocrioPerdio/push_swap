@@ -6,23 +6,11 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:14:13 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/10 13:07:56 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:48:42 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack_node	*find_last(t_stack_node *lst)
-{
-	t_stack_node	*tmp;
-
-	if (!lst)
-		return (NULL);
-	tmp = lst;
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
-}
 
 static void	rotate(t_stack_node **a)
 {
@@ -54,3 +42,9 @@ void	rotate_b(t_stack_node **b)
 	ft_printf("rb\n");
 }
 
+void	rotate_rr(t_stack_node **a, t_stack_node **b)
+{
+	rotate(a);
+	rotate(b);
+	ft_printf("rr\n");
+}
