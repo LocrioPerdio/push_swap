@@ -6,12 +6,11 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:18:25 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/02 15:53:49 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 10:50:32 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	check_dup(t_stack_node *stack, int n)
 {
@@ -34,11 +33,11 @@ void	show_error(t_stack_node **stack)
 
 void	free_stack(t_stack_node **stack)
 {
-	t_stack_node *tmp;
+	t_stack_node	*tmp;
 
 	if (!stack || !*stack)
-		return;
-	while(*stack)
+		return ;
+	while (*stack)
 	{
 		tmp = (*stack)->next;
 		free(*stack);
@@ -46,7 +45,7 @@ void	free_stack(t_stack_node **stack)
 	}
 }
 
-void free_matrix(char **matrix)
+void	free_matrix(char **matrix)
 {
 	size_t	i;
 

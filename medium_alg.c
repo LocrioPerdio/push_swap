@@ -1,126 +1,16 @@
 #include "push_swap.h"
 
-// // 1. Asignar índices.
-
-// // 2. chunk_size = √n
-// //    (o 15 para 100, 30 para 500)
-
-// // 3. Mientras A tenga elementos:
-
-// //       si top(A) pertenece al chunk actual:
-// //             pb
-// //             quizá rb
-// //       si no:
-// //             ra
-
-// // 4. Cuando todos estén en B:
-
-// while (B)
-// {
-// 	encontrar el mayor índice de B llevarlo arriba pa
-// }
-
-// //       mientras B no esté vacía:
-// //             encontrar máximo
-// //             rb o rrb
-// //             pa
-
-// void	assign_pos(t_stack_node *a)
-// {
-// 	t_stack_node	*current;
-// 	size_t			pos;
-
-// 	current = a;
-// 	pos = 0;
-// 	while (current)
-// 	{
-// 		current->pos = pos;
-// 		pos++;
-// 		current = current->next;
-// 	}
-// }
-
-size_t	get_max_index(t_stack_node **stack)
-{
-	size_t			max_index;
-	t_stack_node	*tmp;
-
-	max_index = 0;
-	tmp = *stack;
-	while (tmp)
-	{
-		if (tmp->index > max_index)
-			max_index = tmp->index;
-		tmp = tmp->next;
-	}
-	return (max_index);
-}
-
-size_t	find_max_pos(t_stack_node **stack, size_t max_index)
-{
-	size_t	max_pos;
-	t_stack_node	*current;
-
-	max_pos = 0;
-	current = *stack;
-	while(current)
-	{
-		if (current->index == max_index)
-			return(max_pos);
-		current = current->next;
-		max_pos++;
-	}
-		return(0);
-}
-
-//sustituir estas dos funciones por una unica find_max_pos
-
-void	return_stack(t_stack_node **stack, t_stack_node **a)
-{
-	size_t	s_size;
-	size_t	max_index;
-
-	s_size = (size_t)stack_size(*stack);
-	max_index = get_max_index(stack);
-	while ((*stack))
-	{
-		if ((*stack)->index == max_index)
-			{
-				push_a(a, stack);
-				max_index--;
-				s_size--;
-			}
-		else if (find_max_pos(stack, max_index) > s_size / 2)
-			reverse_rotate_b(stack);
-		else
-			rotate_b(stack);
-	}
-}
-
-size_t	chunk_size(size_t nb)
-{
-	size_t	result;
-
-	result = 1;
-	while (result < nb)
-	{
-		if (result * result == nb)
-			return (result);
-		else if (((result - 1) * (result - 1) < nb) && (result * result > nb))
-			return (result);
-		else
-			result++;
-	}
-	return (result);
-}
+static size_t	find_max_pos(t_stack_node **stack, size_t max_index);
+static void		return_stack(t_stack_node **stack, t_stack_node **a);
+static size_t	chunk_size(size_t nb);
 
 void	chunk_sort(t_stack_node **a, t_stack_node **b)
 {
-	size_t			start;
-	size_t			end;
-	size_t			s_size;
-	size_t			i;
-	size_t			chunk;
+	size_t	start;
+	size_t	end;
+	size_t	s_size;
+	size_t	i;
+	size_t	chunk;
 
 	start = 0;
 	chunk = chunk_size((size_t)stack_size(*a));
@@ -141,4 +31,60 @@ void	chunk_sort(t_stack_node **a, t_stack_node **b)
 		end = start + chunk;
 	}
 	return_stack(b, a);
+}
+
+static size_t	find_max_pos(t_stack_node **stack, size_t max_index)
+{
+	size_t			max_pos;
+	t_stack_node	*current;
+
+	max_pos = 0;
+	current = *stack;
+	while (current)
+	{
+		if (current->index == max_index)
+			return (max_pos);
+		current = current->next;
+		max_pos++;
+	}
+	return (0);
+}
+
+static void	return_stack(t_stack_node **stack, t_stack_node **a)
+{
+	size_t	s_size;
+	size_t	max_index;
+
+	s_size = (size_t)stack_size(*stack);
+	max_index = s_size - 1;
+	while ((*stack))
+	{
+		if ((*stack)->index == max_index)
+		{
+			push_a(a, stack);
+			max_index--;
+			s_size--;
+		}
+		else if (find_max_pos(stack, max_index) > s_size / 2)
+			reverse_rotate_b(stack);
+		else
+			rotate_b(stack);
+	}
+}
+
+static size_t	chunk_size(size_t nb)
+{
+	size_t	result;
+
+	result = 1;
+	while (result < nb)
+	{
+		if (result * result == nb)
+			return (result);
+		else if (((result - 1) * (result - 1) < nb) && (result * result > nb))
+			return (result);
+		else
+			result++;
+	}
+	return (result);
 }

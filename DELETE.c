@@ -28,19 +28,19 @@ void print_index(t_stack_node **a)
     ft_printf("\n");
 }
 
-void print_pos(t_stack_node **a)
-{
-	t_stack_node	*tmp;
+// void print_pos(t_stack_node **a)
+// {
+// 	t_stack_node	*tmp;
 
-	tmp = *a;
-	ft_printf("pos: ");
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->pos);
-		tmp = tmp->next;
-	}
-    ft_printf("\n");
-}
+// 	tmp = *a;
+// 	ft_printf("pos: ");
+// 	while (tmp)
+// 	{
+// 		ft_printf("%d ", tmp->pos);
+// 		tmp = tmp->next;
+// 	}
+//     ft_printf("\n");
+// }
 
 void print_prev(t_stack_node **a)
 {

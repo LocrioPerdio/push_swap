@@ -6,11 +6,14 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/09 16:08:48 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:42:54 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static size_t	get_bits(size_t n);
+static size_t	get_max_bits(t_stack_node **a);
 
 void	radix_sort(t_stack_node **a, t_stack_node **b)
 {
@@ -39,7 +42,7 @@ void	radix_sort(t_stack_node **a, t_stack_node **b)
 	}
 }
 
-size_t	get_bits(size_t n)
+static size_t	get_bits(size_t n)
 {
 	size_t	count;
 
@@ -52,7 +55,7 @@ size_t	get_bits(size_t n)
 	return (count);
 }
 
-size_t	get_max_bits(t_stack_node **a)
+static size_t	get_max_bits(t_stack_node **a)
 {
 	size_t	max_bits;
 	size_t	max_index;

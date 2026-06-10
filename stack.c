@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/08 16:08:03 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:13:18 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ t_stack_node	*new_node(int value)
 		return (NULL);
 	n->value = value;
 	n->index = 0;
-	n->pos = 0;
 	n->prev = NULL;
 	n->next = NULL;
 	return (n);

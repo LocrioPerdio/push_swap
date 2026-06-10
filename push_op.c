@@ -6,22 +6,13 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:47:38 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/08 15:38:54 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:55:36 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-pa (push a): Toma el primer elemento del stack b y lo coloca
-el primero en el stack a.
-No hace nada si b está vacío.
-pb (push b): Toma el primer elemento del stack a y lo coloca
-el primero en el stack b.
-No hace nada si a está vacío.
-*/
-
 #include "push_swap.h"
 
-void	push(t_stack_node **a, t_stack_node **b)
+static void	push(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*first_b;
 	t_stack_node	*second_b;

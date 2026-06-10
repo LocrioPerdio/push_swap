@@ -3,24 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:14:13 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/07 23:47:57 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 13:07:56 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*ra (rotate a): Desplaza hacia arriba todos los elementos del stack a una posición,
-convirtiendo el primer elemento en el último.
-rb (rotate b): Desplaza hacia arriba todos los elementos del stack b una posición,
-convirtiendo el primer elemento en el último.
-rr : ra y rb a la vez.
-*/
-
 #include "push_swap.h"
 
-//TODO quitar esto para usar el del libft y cambiar la funcion en reverse_rotate
-static t_stack_node	*ff_lstlast(t_stack_node *lst)
+t_stack_node	*find_last(t_stack_node *lst)
 {
 	t_stack_node	*tmp;
 
@@ -32,7 +24,7 @@ static t_stack_node	*ff_lstlast(t_stack_node *lst)
 	return (tmp);
 }
 
-void	rotate(t_stack_node **a)
+static void	rotate(t_stack_node **a)
 {
 	t_stack_node	*first;
 	t_stack_node	*second;
@@ -42,7 +34,7 @@ void	rotate(t_stack_node **a)
 		return ;
 	first = *a;
 	second = first->next;
-	last = ff_lstlast(*a);
+	last = find_last(*a);
 	first->next = last->next;
 	first->prev = last;
 	last->next = first;
@@ -62,9 +54,3 @@ void	rotate_b(t_stack_node **b)
 	ft_printf("rb\n");
 }
 
-void	rotate_rr(t_stack_node **a, t_stack_node **b)
-{
-	rotate(a);
-	rotate(b);
-	ft_printf("rr\n");
-}

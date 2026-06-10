@@ -6,19 +6,15 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/09 21:48:59 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:52:10 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int				is_sign(char c);
-t_stack_node	*init(char *argv[]);
-int				valid_input(char *argv[]);
-
-//llamamos a "assign_index desde el main o desde el init???"
-//TODO: implementar funcion para comprobar si el stack ya esta ordenado
-// antes de llamar a algoritmo
+static int			is_sign(char c);
+static t_stack_node	*init(char *argv[]);
+static int			valid_input(char *argv[]);
 
 int	main(int argc, char *argv[])
 {
@@ -33,14 +29,12 @@ int	main(int argc, char *argv[])
 	a = init(argv + 1);
 	if (!a)
 		return (1);
-	//chunk_sort(&a, &b);
 	choose_alg(&a, &b);
-	//radix_sort(&a, &b);
 	free_stack(&a);
 	return (0);
 }
 
-t_stack_node	*init(char *argv[])
+static t_stack_node	*init(char *argv[])
 {
 	t_stack_node	*a;
 	size_t			i;
@@ -66,7 +60,7 @@ t_stack_node	*init(char *argv[])
 	return (a);
 }
 
-int	valid_input(char *argv[])
+static int	valid_input(char *argv[])
 {
 	size_t	i;
 	size_t	j;
@@ -79,8 +73,7 @@ int	valid_input(char *argv[])
 		{
 			if (ft_isdigit(argv[i][j]) || argv[i][j] == ' ')
 				j++;
-			else if (is_sign(argv[i][j])
-				&& (j == 0 || argv[i][j - 1] == ' ')
+			else if (is_sign(argv[i][j]) && (j == 0 || argv[i][j - 1] == ' ')
 				&& ft_isdigit(argv[i][j + 1]))
 				j++;
 			else
@@ -88,11 +81,10 @@ int	valid_input(char *argv[])
 		}
 		i++;
 	}
-
 	return (1);
 }
 
-int	is_sign(char c)
+static int	is_sign(char c)
 {
 	return (c == '+' || c == '-');
 }
