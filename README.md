@@ -1,6 +1,6 @@
 # Push_swap
 
-*This project has been created as part of the 42 curriculum by paduarte and lbiosca.*
+*This project has been created as part of the 42 curriculum by paduarte and lbiosca-.*
 
 ---
 
@@ -177,6 +177,9 @@ The stack is divided into approximately √n chunks.
 2. Rotate A when the current value does not belong to the active chunk.
 3. Repeat until A becomes empty.
 4. Reinsert values from B to A in descending index order.
+	- If the max value is closer to the top of B, rotate B is used.
+	- If the max value is closer to the bottom of B, reverse rotate B is used.
+	- Once the value is on top of B, push it back to A with push A.
 
 #### Advantages
 
@@ -292,7 +295,7 @@ Both students participated in the design, implementation, testing, debugging and
 - Radix sort implementation
 - Testing and Valgrind verification
 
-### lbiosca
+### lbiosca-
 
 - Disorder index implementation
 - Adaptive strategy design
