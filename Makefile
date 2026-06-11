@@ -13,7 +13,7 @@ SRC = \
 	simple_alg.c \
 	medium_alg.c \
 	complex_alg.c \
-	adaptative_alg.c \
+	adaptive_alg.c \
 
 OBJ = $(SRC:.c=.o)
 
