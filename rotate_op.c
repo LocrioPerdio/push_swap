@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:14:13 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/10 15:48:09 by lbiosca-         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:03:11 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,23 @@ static void	rotate(t_stack_node **a)
 	*a = second;
 }
 
-void	rotate_a(t_stack_node **a)
+void	rotate_a(t_stack_node **a, t_stats *stats)
 {
+	count_op(stats, "ra");
 	rotate(a);
 	ft_printf("ra\n");
 }
 
-void	rotate_b(t_stack_node **b)
+void	rotate_b(t_stack_node **b, t_stats *stats)
 {
+	count_op(stats, "rb");
 	rotate(b);
 	ft_printf("rb\n");
 }
 
-void	rotate_rr(t_stack_node **a, t_stack_node **b)
+void	rotate_rr(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
+	count_op(stats, "rr");
 	rotate(a);
 	rotate(b);
 	ft_printf("rr\n");

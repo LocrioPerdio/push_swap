@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:47:38 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 12:55:36 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:02:12 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,16 @@ static void	push(t_stack_node **a, t_stack_node **b)
 	add_node_front(a, first_b);
 }
 
-void	push_a(t_stack_node **a, t_stack_node **b)
+void	push_a(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
+	count_op(stats, "pa");
 	push(a, b);
 	ft_printf("pa\n");
 }
 
-void	push_b(t_stack_node **a, t_stack_node **b)
+void	push_b(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
+	count_op(stats, "pb");
 	push(b, a);
 	ft_printf("pb\n");
 }

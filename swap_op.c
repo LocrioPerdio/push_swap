@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 21:55:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 14:28:18 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:03:58 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,23 @@ static void	swap(t_stack_node **a)
 	*a = second;
 }
 
-void	swap_a(t_stack_node **a)
+void	swap_a(t_stack_node **a, t_stats *stats)
 {
+	count_op(stats, "sa");
 	swap(a);
 	ft_printf("sa\n");
 }
 
-void	swap_b(t_stack_node **b)
+void	swap_b(t_stack_node **b, t_stats *stats)
 {
+	count_op(stats, "sb");
 	swap(b);
 	ft_printf("sb\n");
 }
 
-void	swap_ss(t_stack_node **a, t_stack_node **b)
+void	swap_ss(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
+	count_op(stats, "ss");
 	swap(a);
 	swap(b);
 	ft_printf("ss\n");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   complex_alg.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 12:42:54 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:07:42 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	radix_sort(t_stack_node **a, t_stack_node **b)
 		while (i < size)
 		{
 			if ((((*a)->index >> bit) & 1) == 0)
-				push_b(a, b);
+				push_b(a, b, stats);
 			else
-				rotate_a(a);
+				rotate_a(a, stats);
 			i++;
 		}
 		while (*b)
-			push_a(a, b);
+			push_a(a, b, stats);
 		bit++;
 	}
 }

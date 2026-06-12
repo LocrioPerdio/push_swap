@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medium_alg.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:47:24 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/10 15:47:27 by lbiosca-         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:08:46 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,14 @@ static void	return_stack(t_stack_node **stack, t_stack_node **a)
 	{
 		if ((*stack)->index == max_index)
 		{
-			push_a(a, stack);
+			push_a(a, stack, stats);
 			max_index--;
 			s_size--;
 		}
 		else if (find_max_pos(stack, max_index) > s_size / 2)
-			reverse_rotate_b(stack);
+			reverse_rotate_b(stack, stats);
 		else
-			rotate_b(stack);
+			rotate_b(stack, stats);
 	}
 }
 

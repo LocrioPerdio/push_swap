@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_op.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 16:06:08 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/10 15:48:01 by lbiosca-         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:02:48 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,23 @@ static void	reverse_rotate(t_stack_node **a)
 	*a = last;
 }
 
-void	reverse_rotate_a(t_stack_node **a)
+void	reverse_rotate_a(t_stack_node **a, t_stats *stats)
 {
+	count_op(stats, "rra");
 	reverse_rotate(a);
 	ft_printf("rra\n");
 }
 
-void	reverse_rotate_b(t_stack_node **b)
+void	reverse_rotate_b(t_stack_node **b, t_stats *stats)
 {
+	count_op(stats, "rrb");
 	reverse_rotate(b);
 	ft_printf("rrb\n");
 }
 
-void	reverse_rotate_rr(t_stack_node **a, t_stack_node **b)
+void	reverse_rotate_rr(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
+	count_op(stats, "rrr");
 	reverse_rotate(a);
 	reverse_rotate(b);
 	ft_printf("rrr\n");

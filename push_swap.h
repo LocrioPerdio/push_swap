@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/11 19:45:19 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:05:12 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,25 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 }						t_stack_node;
 
-typedef struct s_bench
+typedef struct s_stats
 {
-	int					sa;
-	int					sb;
-	int					ss;
-	int					pa;
-	int					pb;
-	int					ra;
-	int					rb;
-	int					rr;
-	int					rra;
-	int					rrb;
-	int					rrr;
-	int					total;
-	int					enabled;
-}						t_bench;
+	int					bench;
+	float				disorder;
+	size_t				total;
+	size_t				sa;
+	size_t				sb;
+	size_t				ss;
+	size_t				pa;
+	size_t				pb;
+	size_t				ra;
+	size_t				rb;
+	size_t				rr;
+	size_t				rra;
+	size_t				rrb;
+	size_t				rrr;
+	char				*algorithm;
+	char				*complexity;
+}						t_stats;
 
 /* Handle stack */
 
@@ -63,26 +66,31 @@ t_stack_node			*find_last(t_stack_node *lst);
 
 /* Swap operations */
 
-void					swap_a(t_stack_node **a);
-void					swap_b(t_stack_node **b);
-void					swap_ss(t_stack_node **a, t_stack_node **b);
+void					swap_a(t_stack_node **a, t_stats *stats);
+void					swap_b(t_stack_node **b, t_stats *stats);
+void					swap_ss(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
 
 /* Push operations */
 
-void					push_a(t_stack_node **a, t_stack_node **b);
-void					push_b(t_stack_node **a, t_stack_node **b);
+void					push_a(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
+void					push_b(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
 
 /* Rotate operations */
 
-void					rotate_a(t_stack_node **a);
-void					rotate_b(t_stack_node **b);
-void					rotate_rr(t_stack_node **a, t_stack_node **b);
+void					rotate_a(t_stack_node **a, t_stats *stats);
+void					rotate_b(t_stack_node **b, t_stats *stats);
+void					rotate_rr(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
 
 /* Reverse rotate operations */
 
-void					reverse_rotate_a(t_stack_node **a);
-void					reverse_rotate_b(t_stack_node **b);
-void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b);
+void					reverse_rotate_a(t_stack_node **a, t_stats *stats);
+void					reverse_rotate_b(t_stack_node **b, t_stats *stats);
+void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
 
 /* Algorithms */
 
@@ -90,5 +98,7 @@ void					selection_sort(t_stack_node **a, t_stack_node **b);
 void					chunk_sort(t_stack_node **a, t_stack_node **b);
 void					radix_sort(t_stack_node **a, t_stack_node **b);
 int						choose_alg(t_stack_node **a, t_stack_node **b);
+
+/* Benchmark */
 
 #endif

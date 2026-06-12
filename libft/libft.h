@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 12:40:44 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 14:48:03 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 15:54:42 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ int					ft_putadress(unsigned long n);
 /* GET_ NEXT_LINE*/
 
 char				*get_next_line(int fd);
+int					ft_strcmp(char *s1, char *s2);
 
 #endif
