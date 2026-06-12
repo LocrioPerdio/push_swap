@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/12 16:05:12 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:41:56 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,18 @@ void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b,
 
 /* Algorithms */
 
-void					selection_sort(t_stack_node **a, t_stack_node **b);
-void					chunk_sort(t_stack_node **a, t_stack_node **b);
-void					radix_sort(t_stack_node **a, t_stack_node **b);
-int						choose_alg(t_stack_node **a, t_stack_node **b);
+void					selection_sort(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
+void					chunk_sort(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
+void					radix_sort(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
+int						choose_alg(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
 
 /* Benchmark */
+
+void					count_op(t_stats *stats, char *op);
+void					print_benchmark(t_stats *stats);
 
 #endif

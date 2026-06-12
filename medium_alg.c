@@ -6,17 +6,17 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:47:24 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/12 16:08:46 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:26:07 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static size_t	find_max_pos(t_stack_node **stack, size_t max_index);
-static void		return_stack(t_stack_node **stack, t_stack_node **a);
+static void		return_stack(t_stack_node **stack, t_stack_node **a, t_stats *stats);
 static size_t	chunk_size(size_t nb);
 
-void	chunk_sort(t_stack_node **a, t_stack_node **b)
+void	chunk_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
 	size_t	start;
 	size_t	end;
@@ -34,15 +34,15 @@ void	chunk_sort(t_stack_node **a, t_stack_node **b)
 		while (i < s_size)
 		{
 			if (((*a)->index >= start && (*a)->index <= end))
-				push_b(a, b);
+				push_b(a, b, stats);
 			else
-				rotate_a(a);
+				rotate_a(a, stats);
 			i++;
 		}
 		start = end + 1;
 		end = start + chunk;
 	}
-	return_stack(b, a);
+	return_stack(b, a, stats);
 }
 
 static size_t	find_max_pos(t_stack_node **stack, size_t max_index)
@@ -62,7 +62,7 @@ static size_t	find_max_pos(t_stack_node **stack, size_t max_index)
 	return (0);
 }
 
-static void	return_stack(t_stack_node **stack, t_stack_node **a)
+static void	return_stack(t_stack_node **stack, t_stack_node **a, t_stats *stats)
 {
 	size_t	s_size;
 	size_t	max_index;

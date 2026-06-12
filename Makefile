@@ -14,6 +14,7 @@ SRC = \
 	medium_alg.c \
 	complex_alg.c \
 	adaptive_alg.c \
+	bench.c \
 
 OBJ = $(SRC:.c=.o)
 

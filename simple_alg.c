@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:46:29 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/12 16:09:18 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:15:15 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	find_min_pos(t_stack_node **stack, size_t min_index);
 
-void	selection_sort(t_stack_node **a, t_stack_node **b)
+void	selection_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
 	size_t	s_size;
 	size_t	min_index;

@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/12 16:07:42 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:14:36 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static size_t	get_bits(size_t n);
 static size_t	get_max_bits(t_stack_node **a);
 
-void	radix_sort(t_stack_node **a, t_stack_node **b)
+void	radix_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
 	size_t	bit;
 	size_t	max_bits;
