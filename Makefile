@@ -15,6 +15,7 @@ SRC = \
 	complex_alg.c \
 	adaptive_alg.c \
 	bench.c \
+	parse.c \
 
 OBJ = $(SRC:.c=.o)
 

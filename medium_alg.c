@@ -6,14 +6,15 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:47:24 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/12 16:26:07 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 18:46:38 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static size_t	find_max_pos(t_stack_node **stack, size_t max_index);
-static void		return_stack(t_stack_node **stack, t_stack_node **a, t_stats *stats);
+static void		return_stack(t_stack_node **stack, t_stack_node **a,
+					t_stats *stats);
 static size_t	chunk_size(size_t nb);
 
 void	chunk_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
