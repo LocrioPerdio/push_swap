@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/14 19:46:02 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 20:12:37 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack_node
 typedef struct s_stats
 {
 	int					bench;
+	int	print_ops;
 	float				disorder;
 	size_t				total_ops;
 	size_t				sa;
