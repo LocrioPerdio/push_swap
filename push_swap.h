@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/14 18:01:28 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 19:46:02 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,15 @@ void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b,
 
 /* Algorithms */
 
+void					set_simple(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
 void					selection_sort(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
+void					set_medium(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
 void					chunk_sort(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
+void					set_complex(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 void					radix_sort(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);

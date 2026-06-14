@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:47:24 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/14 18:46:38 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 19:48:18 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,11 @@ static size_t	chunk_size(size_t nb)
 			result++;
 	}
 	return (result);
+}
+
+void	set_medium(t_stack_node **a, t_stack_node **b, t_stats *stats)
+{
+	stats->algorithm = "Medium";
+	stats->complexity = "O(n*sqrt(n))";
+	chunk_sort(a, b, stats);
 }

@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 17:23:24 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/14 18:00:22 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 19:50:37 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	parse_flags(int argc, char **argv, t_stats *stats, char **flag)
 	i = 1;
 	while (i < argc && argv[i][0] == '-')
 	{
-		if (!ft_strcmp(argv[1], "--bench"))
+		if (!ft_strcmp(argv[i], "--bench"))
 			stats->bench = 1;
 		else if (!*flag)
 			*flag = argv[i];

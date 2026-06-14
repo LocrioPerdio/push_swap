@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/12 16:14:36 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 19:48:12 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,11 @@ static size_t	get_max_bits(t_stack_node **a)
 	max_index = (size_t)stack_size(*a) - 1;
 	max_bits = get_bits(max_index);
 	return (max_bits);
+}
+
+void	set_complex(t_stack_node **a, t_stack_node **b, t_stats *stats)
+{
+	stats->algorithm = "Complex";
+	stats->complexity = "O(n log n)";
+	radix_sort(a, b, stats);
 }
