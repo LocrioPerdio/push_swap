@@ -6,70 +6,47 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/12 16:33:45 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 18:08:37 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int			is_sign(char c);
-static t_stack_node	*init(char *argv[]);
-static int			valid_input(char *argv[]);
+static int	is_sign(char c);
+static int	valid_input(char *argv[]);
+static void	run_algorithm(char *flag, t_stack_node **a, t_stack_node **b,
+				t_stats *stats);
 
 int	main(int argc, char *argv[])
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
 	t_stats			stats;
+	int	start;
+	char *flag;
 
 	a = NULL;
 	b = NULL;
+	flag = NULL;
 	ft_bzero(&stats, sizeof(t_stats));
 	if (argc < 2)
 		return (1);
-	if (argc > 1 && !ft_strcmp(argv[1], "--bench"))
-	{
-		stats.bench = 1;
-		argv++;
-		argc--;
-	}
-	valid_input(argv + 1);
-	a = init(argv + 1);
+	start = parse_flags(argc, argv, &stats, flag);
+	valid_input(argv + start);
+	a = init(argv + start);
 	if (!a)
 		return (1);
-	stats->disorder = disorder_index(&a);
-	choose_alg(&a, &b, &stats);
+	stats.disorder = disorder_index(&a);
+	run_algorithm(flag, &a, &b, &stats);
 	if (stats.bench)
 		print_benchmark(&stats);
 	free_stack(&a);
 	return (0);
 }
 
-static t_stack_node	*init(char *argv[])
+static int	is_sign(char c)
 {
-	t_stack_node	*a;
-	size_t			i;
-	char			**arg;
-	char			**tmp;
-
-	a = NULL;
-	i = 0;
-	arg = NULL;
-	while (argv[i])
-	{
-		arg = ft_split(argv[i], ' ');
-		tmp = arg;
-		while (*tmp)
-		{
-			if (create_stack(&a, ft_atoi_ps(*tmp, &a, arg)))
-				show_error(&a, arg);
-			tmp++;
-		}
-		free_matrix(arg);
-		i++;
-	}
-	assign_index(a);
-	return (a);
+	return (c == '+' || c == '-');
 }
 
 static int	valid_input(char *argv[])
@@ -96,7 +73,30 @@ static int	valid_input(char *argv[])
 	return (1);
 }
 
-static int	is_sign(char c)
-{
-	return (c == '+' || c == '-');
-}
+// int	main(int argc, char *argv[])
+// {
+// 	t_stack_node	*a;
+// 	t_stack_node	*b;
+// 	t_stats			stats;
+// 	char			*flag;
+// 	int				start;
+
+// 	a = NULL;
+// 	b = NULL;
+// 	alg_flag = NULL;
+// 	ft_bzero(&stats, sizeof(t_stats));
+// 	if (argc < 2)
+// 		return (1);
+// 	start = parse_flags(argc, argv, &stats, flag);
+// 	valid_input(argv + start);
+// 	a = init(argv + start);
+// 	if (!a)
+// 		return (1);
+// 	stats.disorder = disorder_index(&a);
+// 	run_algorithm(alg_flag, &a, &b, &stats);
+// 	if (stats.bench)
+// 		print_benchmark(&stats);
+// 	free_stack(&a);
+// 	free_stack(&b);
+// 	return (0);
+// }

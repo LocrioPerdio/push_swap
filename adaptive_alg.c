@@ -6,13 +6,13 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:47:13 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/12 16:37:28 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 17:33:15 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	choose_alg(t_stack_node **a, t_stack_node **b, t_stats *stats)
+int	adaptive_alg(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
 	float	d_index;
 

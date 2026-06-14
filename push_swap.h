@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/12 16:41:56 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/14 18:01:28 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stats
 {
 	int					bench;
 	float				disorder;
-	size_t				total;
+	size_t				total_ops;
 	size_t				sa;
 	size_t				sb;
 	size_t				ss;
@@ -48,6 +48,12 @@ typedef struct s_stats
 int						create_stack(t_stack_node **a, int n);
 void					add_node_front(t_stack_node **a, t_stack_node *new);
 void					assign_index(t_stack_node *a);
+
+/* Parse arguments */
+
+t_stack_node			*init(char *argv[]);
+int						parse_flags(int argc, char **argv, t_stats *stats,
+							char **flag);
 
 /* Errors and free */
 
@@ -100,12 +106,15 @@ void					chunk_sort(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 void					radix_sort(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
-int						choose_alg(t_stack_node **a, t_stack_node **b,
+int						adaptive_alg(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 
 /* Benchmark */
 
 void					count_op(t_stats *stats, char *op);
 void					print_benchmark(t_stats *stats);
+void					print_disorder(t_stats *stats);
+void					print_strategy(t_stats *stats);
+void					print_ops(t_stats *stats);
 
 #endif
