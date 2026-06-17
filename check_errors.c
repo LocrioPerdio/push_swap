@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:18:25 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 21:15:06 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/17 14:03:17 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,28 @@ void	free_matrix(char **matrix)
 		i++;
 	}
 	free(matrix);
+}
+
+int	valid_input(char *argv[])
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]) || argv[i][j] == ' ')
+				j++;
+			else if (is_sign(argv[i][j]) && (j == 0 || argv[i][j - 1] == ' ')
+				&& ft_isdigit(argv[i][j + 1]))
+				j++;
+			else
+				show_error(NULL, NULL);
+		}
+		i++;
+	}
+	return (1);
 }

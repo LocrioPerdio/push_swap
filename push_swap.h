@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/14 20:12:37 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/17 14:35:39 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ typedef struct s_stack_node
 {
 	int					value;
 	size_t				index;
-	struct s_stack_node	*prev;
+	struct s_stack_node *prev;
 	struct s_stack_node	*next;
 }						t_stack_node;
 
 typedef struct s_stats
 {
 	int					bench;
-	int	print_ops;
 	float				disorder;
 	size_t				total_ops;
 	size_t				sa;
@@ -47,19 +46,20 @@ typedef struct s_stats
 /* Handle stack */
 
 int						create_stack(t_stack_node **a, int n);
-void					add_node_front(t_stack_node **a, t_stack_node *new);
+t_stack_node			*init(char *argv[]);
 void					assign_index(t_stack_node *a);
 
-/* Parse arguments */
-
-t_stack_node			*init(char *argv[]);
-int						parse_flags(int argc, char **argv, t_stats *stats,
-							char **flag);
+t_stack_node			*new_node(int value);
+t_stack_node			*find_last(t_stack_node *lst);
+int						stack_size(t_stack_node *a);
+void					add_node_back(t_stack_node **a, t_stack_node *new);
+void					add_node_front(t_stack_node **a, t_stack_node *new);
 
 /* Errors and free */
 
 void					show_error(t_stack_node **stack, char **arg);
 int						check_dup(t_stack_node *stack, int n);
+int						valid_input(char *argv[]);
 void					free_stack(t_stack_node **stack);
 void					free_matrix(char **matrix);
 
@@ -67,12 +67,15 @@ void					free_matrix(char **matrix);
 
 int						ft_atoi_ps(const char *nptr, t_stack_node **a,
 							char **arg);
-int						stack_size(t_stack_node *a);
 float					disorder_index(t_stack_node **a);
-t_stack_node			*find_last(t_stack_node *lst);
+int						parse_flags(int argc, char **argv, t_stats *stats,
+							char **flag);
+//int						total_pairs(t_stack_node **a);
+int						is_sign(char c);
 
 /* Swap operations */
 
+//void					swap(t_stack_node **a);
 void					swap_a(t_stack_node **a, t_stats *stats);
 void					swap_b(t_stack_node **b, t_stats *stats);
 void					swap_ss(t_stack_node **a, t_stack_node **b,
@@ -80,6 +83,7 @@ void					swap_ss(t_stack_node **a, t_stack_node **b,
 
 /* Push operations */
 
+//void					push(t_stack_node **a, t_stack_node **b);
 void					push_a(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 void					push_b(t_stack_node **a, t_stack_node **b,
@@ -87,6 +91,7 @@ void					push_b(t_stack_node **a, t_stack_node **b,
 
 /* Rotate operations */
 
+//void					rotate(t_stack_node **a);
 void					rotate_a(t_stack_node **a, t_stats *stats);
 void					rotate_b(t_stack_node **b, t_stats *stats);
 void					rotate_rr(t_stack_node **a, t_stack_node **b,
@@ -94,26 +99,31 @@ void					rotate_rr(t_stack_node **a, t_stack_node **b,
 
 /* Reverse rotate operations */
 
+//void					reverse_rotate(t_stack_node **a);
 void					reverse_rotate_a(t_stack_node **a, t_stats *stats);
 void					reverse_rotate_b(t_stack_node **b, t_stats *stats);
 void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 
-/* Algorithms */
+/* Set functions */
 
+void					set_sorted(t_stats *stats, char *flag);
 void					set_simple(t_stack_node **a, t_stack_node **b,
-							t_stats *stats);
-void					selection_sort(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 void					set_medium(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
-void					chunk_sort(t_stack_node **a, t_stack_node **b,
-							t_stats *stats);
 void					set_complex(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
+
+/* Algorithms */
+
+void					selection_sort(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
+void					chunk_sort(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 void					radix_sort(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
-int						adaptive_alg(t_stack_node **a, t_stack_node **b,
+void					adaptive_alg(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 
 /* Benchmark */

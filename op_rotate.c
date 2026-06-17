@@ -1,51 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_op.c                                          :+:      :+:    :+:   */
+/*   op_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/31 21:55:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/12 16:03:58 by paduarte         ###   ########.fr       */
+/*   Created: 2026/06/01 14:14:13 by lbiosca-          #+#    #+#             */
+/*   Updated: 2026/06/17 14:37:37 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_stack_node **a)
+static void	rotate(t_stack_node **a)
 {
 	t_stack_node	*first;
 	t_stack_node	*second;
+	t_stack_node	*last;
 
 	if (!*a || stack_size(*a) == 1)
 		return ;
 	first = *a;
 	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	first->prev = second->prev;
+	last = find_last(*a);
+	first->next = last->next;
+	first->prev = last;
+	last->next = first;
 	second->prev = NULL;
 	*a = second;
 }
 
-void	swap_a(t_stack_node **a, t_stats *stats)
+void	rotate_a(t_stack_node **a, t_stats *stats)
 {
-	count_op(stats, "sa");
-	swap(a);
-	ft_printf("sa\n");
+	count_op(stats, "ra");
+	rotate(a);
+	ft_printf("ra\n");
 }
 
-void	swap_b(t_stack_node **b, t_stats *stats)
+void	rotate_b(t_stack_node **b, t_stats *stats)
 {
-	count_op(stats, "sb");
-	swap(b);
-	ft_printf("sb\n");
+	count_op(stats, "rb");
+	rotate(b);
+	ft_printf("rb\n");
 }
 
-void	swap_ss(t_stack_node **a, t_stack_node **b, t_stats *stats)
+void	rotate_rr(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
-	count_op(stats, "ss");
-	swap(a);
-	swap(b);
-	ft_printf("ss\n");
+	count_op(stats, "rr");
+	rotate(a);
+	rotate(b);
+	ft_printf("rr\n");
 }

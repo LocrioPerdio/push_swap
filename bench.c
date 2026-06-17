@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 19:57:01 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/14 19:57:02 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:17:07 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	print_benchmark(t_stats *stats)
 	print_disorder(stats);
 	print_strategy(stats);
 	print_ops(stats);
-	ft_putstr_fd("\n", 1);
+	ft_putstr_fd("\n", 2);
 }
 
 void	print_disorder(t_stats *stats)
@@ -58,47 +58,49 @@ void	print_disorder(t_stats *stats)
 	d_index = stats->disorder;
 	integer = (long)d_index;
 	fraction = (d_index - integer) * 100;
-	write(1, "[bench] disorder:  ", 18);
-	ft_putnbr_fd(integer, 1);
-	write(1, ".", 1);
-	ft_putnbr_fd(fraction, 1);
-	write(1, "%\n", 2);
+	write(2, "[bench] disorder:  ", 18);
+	ft_putnbr_fd(integer, 2);
+	write(2, ".", 1);
+	if (fraction == 0)
+		write(2, "0", 1);
+	ft_putnbr_fd(fraction, 2);
+	write(2, "%\n", 2);
 }
 
 void	print_strategy(t_stats *stats)
 {
-	ft_putstr_fd("[bench] strategy: ", 1);
-	ft_putstr_fd(stats->algorithm, 1);
-	ft_putstr_fd(" / ", 1);
-	ft_putstr_fd(stats->complexity, 1);
-	ft_putstr_fd("\n", 1);
+	ft_putstr_fd("[bench] strategy: ", 2);
+	ft_putstr_fd(stats->algorithm, 2);
+	ft_putstr_fd(" / ", 2);
+	ft_putstr_fd(stats->complexity, 2);
+	ft_putstr_fd("\n", 2);
 }
 
 void	print_ops(t_stats *stats)
 {
-	ft_putstr_fd("[bench] total_ops: ", 1);
-	ft_putnbr_fd((int)stats->total_ops, 1);
-	ft_putstr_fd("\n[bench] sa: ", 1);
-	ft_putnbr_fd((int)stats->sa, 1);
-	ft_putstr_fd(" sb: ", 1);
-	ft_putnbr_fd((int)stats->sb, 1);
-	ft_putstr_fd(" ss: ", 1);
-	ft_putnbr_fd((int)stats->ss, 1);
-	ft_putstr_fd(" pa: ", 1);
-	ft_putnbr_fd((int)stats->pa, 1);
-	ft_putstr_fd(" pb: ", 1);
-	ft_putnbr_fd((int)stats->pb, 1);
-	ft_putstr_fd("\n[bench] ra: ", 1);
-	ft_putnbr_fd((int)stats->ra, 1);
-	ft_putstr_fd(" rb: ", 1);
-	ft_putnbr_fd((int)stats->rb, 1);
-	ft_putstr_fd(" rr: ", 1);
-	ft_putnbr_fd((int)stats->rr, 1);
-	ft_putstr_fd(" rra: ", 1);
-	ft_putnbr_fd((int)stats->rra, 1);
-	ft_putstr_fd(" rrb: ", 1);
-	ft_putnbr_fd((int)stats->rrb, 1);
-	ft_putstr_fd(" rrr: ", 1);
-	ft_putnbr_fd((int)stats->rrr, 1);
-	ft_putstr_fd("\n", 1);
+	ft_putstr_fd("[bench] total_ops: ", 2);
+	ft_putnbr_fd((int)stats->total_ops, 2);
+	ft_putstr_fd("\n[bench] sa: ", 2);
+	ft_putnbr_fd((int)stats->sa, 2);
+	ft_putstr_fd(" sb: ", 2);
+	ft_putnbr_fd((int)stats->sb, 2);
+	ft_putstr_fd(" ss: ", 2);
+	ft_putnbr_fd((int)stats->ss, 2);
+	ft_putstr_fd(" pa: ", 2);
+	ft_putnbr_fd((int)stats->pa, 2);
+	ft_putstr_fd(" pb: ", 2);
+	ft_putnbr_fd((int)stats->pb, 2);
+	ft_putstr_fd("\n[bench] ra: ", 2);
+	ft_putnbr_fd((int)stats->ra, 2);
+	ft_putstr_fd(" rb: ", 2);
+	ft_putnbr_fd((int)stats->rb, 2);
+	ft_putstr_fd(" rr: ", 2);
+	ft_putnbr_fd((int)stats->rr, 2);
+	ft_putstr_fd(" rra: ", 2);
+	ft_putnbr_fd((int)stats->rra, 2);
+	ft_putstr_fd(" rrb: ", 2);
+	ft_putnbr_fd((int)stats->rrb, 2);
+	ft_putstr_fd(" rrr: ", 2);
+	ft_putnbr_fd((int)stats->rrr, 2);
+	ft_putstr_fd("\n", 2);
 }

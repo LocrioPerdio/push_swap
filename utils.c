@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 21:16:49 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 21:35:03 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:56:00 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,22 @@ int	ft_atoi_ps(const char *nptr, t_stack_node **a, char **arg)
 	return ((int)sign * res);
 }
 
-int	stack_size(t_stack_node *a)
+int	parse_flags(int argc, char **argv, t_stats *stats, char **flag)
 {
-	int				count;
-	t_stack_node	*ptr;
+	int	i;
 
-	count = 0;
-	ptr = a;
-	while (ptr)
+	i = 1;
+	while (i < argc && argv[i][0] == '-')
 	{
-		count++;
-		ptr = ptr->next;
+		if (!ft_strcmp(argv[i], "--bench"))
+			stats->bench = 1;
+		else if (!*flag)
+			*flag = argv[i];
+		else
+			show_error(NULL, NULL);
+		i++;
 	}
-	return (count);
+	return (i);
 }
 
 static int	total_pairs(t_stack_node **a)
@@ -105,14 +108,7 @@ float	disorder_index(t_stack_node **a)
 	return ((float)mistakes / pairs);
 }
 
-t_stack_node	*find_last(t_stack_node *lst)
+int	is_sign(char c)
 {
-	t_stack_node	*tmp;
-
-	if (!lst)
-		return (NULL);
-	tmp = lst;
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
+	return (c == '+' || c == '-');
 }

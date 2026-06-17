@@ -6,14 +6,11 @@
 /*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 10:20:08 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/10 21:30:32 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:59:49 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static t_stack_node	*new_node(int value);
-static void			add_node_back(t_stack_node **a, t_stack_node *new);
 
 int	create_stack(t_stack_node **a, int n)
 {
@@ -28,47 +25,31 @@ int	create_stack(t_stack_node **a, int n)
 	return (0);
 }
 
-static t_stack_node	*new_node(int value)
+t_stack_node	*init(char *argv[])
 {
-	t_stack_node	*n;
+	t_stack_node	*a;
+	size_t			i;
+	char			**arg;
+	char			**tmp;
 
-	n = malloc(sizeof(t_stack_node));
-	if (!n)
-		return (NULL);
-	n->value = value;
-	n->index = 0;
-	n->prev = NULL;
-	n->next = NULL;
-	return (n);
-}
-
-static void	add_node_back(t_stack_node **a, t_stack_node *new)
-{
-	t_stack_node	*ptr;
-
-	if (!a || !new)
-		return ;
-	if (*a == NULL)
+	a = NULL;
+	i = 0;
+	arg = NULL;
+	while (argv[i])
 	{
-		*a = new;
-		return ;
+		arg = ft_split(argv[i], ' ');
+		tmp = arg;
+		while (*tmp)
+		{
+			if (create_stack(&a, ft_atoi_ps(*tmp, &a, arg)))
+				show_error(&a, arg);
+			tmp++;
+		}
+		free_matrix(arg);
+		i++;
 	}
-	ptr = *a;
-	while (ptr->next)
-		ptr = ptr->next;
-	new->prev = ptr;
-	ptr->next = new;
-}
-
-void	add_node_front(t_stack_node **a, t_stack_node *new)
-{
-	if (!a || !new)
-		return ;
-	new->next = *a;
-	new->prev = NULL;
-	if (*a)
-		(*a)->prev = new;
-	*a = new;
+	assign_index(a);
+	return (a);
 }
 
 void	assign_index(t_stack_node *a)
