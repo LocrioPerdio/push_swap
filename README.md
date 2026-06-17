@@ -34,6 +34,9 @@ This version of the project focuses on algorithmic complexity and requires the i
 - Disorder index calculation
 - Multiple sorting strategies
 - Adaptive algorithm selection
+- Manual strategy selection
+- Benchmark mode (`--bench`)
+- Operation statistics
 
 ---
 
@@ -92,8 +95,56 @@ pb
 sa
 pa
 ```
+### Manual Strategy Selection
 
----
+The sorting strategy can be forced manually:
+
+```bash
+./push_swap --simple 4 2 8 1 3
+./push_swap --medium 4 2 8 1 3
+./push_swap --complex 4 2 8 1 3
+./push_swap --adaptive 4 2 8 1 3
+```
+
+Available selectors:
+
+| Flag | Strategy |
+|------|----------|
+| `--simple` | Simple Sort |
+| `--medium` | Chunk Sort |
+| `--complex` | Radix Sort |
+| `--adaptive` | Adaptive Selection |
+
+If no selector is specified, adaptive mode is used by default.
+
+## Benchmark Mode
+
+Benchmark mode can be enabled with:
+```
+./push_swap --bench 4 2 8 1 3
+```
+
+Benchmark mode may also be combined with any strategy selector:
+```
+./push_swap --bench --simple 4 2 8 1
+./push_swap --bench --medium 4 2 8 1
+./push_swap --bench --complex 4 2 8 1
+./push_swap --bench --adaptive 4 2 8 1
+```
+When enabled, the program reports additional information about the sorting
+process after execution.
+
+Benchmark data is written to standard error while sorting operations continue
+to be written to standard output, ensuring compatibility with Push_swap
+evaluation tools.
+
+### Reported Metrics
+
+- Initial disorder index
+- Selected algorithm
+- Theoretical complexity
+- Total number of operations
+- Per-operation statistics
 
 ## Data Structure
 
@@ -293,7 +344,9 @@ Both students participated in the design, implementation, testing, debugging and
 - Stack operations (`sa`, `sb`, `ss`, `pa`, `pb`)
 - Index assignment
 - Radix sort implementation
+- Benchmark mode
 - Testing and Valgrind verification
+
 
 ### lbiosca-
 
@@ -311,6 +364,8 @@ Both students participated in the design, implementation, testing, debugging and
 - Debugging
 - Code reviews
 - Algorithm selection
+- Benchmark mode verification
+- Strategy selection testing
 - Final testing
 
 ---
@@ -351,9 +406,10 @@ All heap blocks were freed -- no leaks are possible
 
 ### Algorithms
 
+- Selection Sort
 - Radix Sort
 - Chunk-Based Sorting
-- Big-O Complexity Analysis
+- Adaptive Analysis
 
 ---
 
