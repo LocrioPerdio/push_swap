@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 13:49:02 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/17 14:39:06 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:56:46 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	stack_size(t_stack_node *a)
 	return (count);
 }
 
-static t_stack_node	*new_node(int value)
+t_stack_node	*new_node(int value)
 {
 	t_stack_node	*n;
 
@@ -53,7 +53,7 @@ static t_stack_node	*new_node(int value)
 	return (n);
 }
 
-static void	add_node_back(t_stack_node **a, t_stack_node *new)
+void	add_node_back(t_stack_node **a, t_stack_node *new)
 {
 	t_stack_node	*ptr;
 

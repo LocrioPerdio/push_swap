@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 10:18:25 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/17 14:03:17 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:51:50 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

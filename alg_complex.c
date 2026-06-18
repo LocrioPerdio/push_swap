@@ -3,17 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   alg_complex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/17 13:32:24 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:48:53 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t	get_bits(size_t n);
-static size_t	get_max_bits(t_stack_node **a);
+static size_t	get_bits(size_t n)
+{
+	size_t	count;
+
+	count = 0;
+	while (n)
+	{
+		n >>= 1;
+		count++;
+	}
+	return (count);
+}
+
+static size_t	get_max_bits(t_stack_node **a)
+{
+	size_t	max_bits;
+	size_t	max_index;
+
+	max_index = (size_t)stack_size(*a) - 1;
+	max_bits = get_bits(max_index);
+	return (max_bits);
+}
 
 void	radix_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
@@ -40,27 +60,4 @@ void	radix_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 			push_a(a, b, stats);
 		bit++;
 	}
-}
-
-static size_t	get_bits(size_t n)
-{
-	size_t	count;
-
-	count = 0;
-	while (n)
-	{
-		n >>= 1;
-		count++;
-	}
-	return (count);
-}
-
-static size_t	get_max_bits(t_stack_node **a)
-{
-	size_t	max_bits;
-	size_t	max_index;
-
-	max_index = (size_t)stack_size(*a) - 1;
-	max_bits = get_bits(max_index);
-	return (max_bits);
 }

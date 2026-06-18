@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/17 14:23:35 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:58:43 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,3 @@ int	main(int argc, char *argv[])
 	free_stack(&a);
 	return (0);
 }
-
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/17 14:35:39 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:58:18 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct s_stack_node
 {
 	int					value;
 	size_t				index;
-	struct s_stack_node *prev;
+	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 }						t_stack_node;
 
@@ -70,12 +70,10 @@ int						ft_atoi_ps(const char *nptr, t_stack_node **a,
 float					disorder_index(t_stack_node **a);
 int						parse_flags(int argc, char **argv, t_stats *stats,
 							char **flag);
-//int						total_pairs(t_stack_node **a);
 int						is_sign(char c);
 
 /* Swap operations */
 
-//void					swap(t_stack_node **a);
 void					swap_a(t_stack_node **a, t_stats *stats);
 void					swap_b(t_stack_node **b, t_stats *stats);
 void					swap_ss(t_stack_node **a, t_stack_node **b,
@@ -83,7 +81,6 @@ void					swap_ss(t_stack_node **a, t_stack_node **b,
 
 /* Push operations */
 
-//void					push(t_stack_node **a, t_stack_node **b);
 void					push_a(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 void					push_b(t_stack_node **a, t_stack_node **b,
@@ -91,7 +88,6 @@ void					push_b(t_stack_node **a, t_stack_node **b,
 
 /* Rotate operations */
 
-//void					rotate(t_stack_node **a);
 void					rotate_a(t_stack_node **a, t_stats *stats);
 void					rotate_b(t_stack_node **b, t_stats *stats);
 void					rotate_rr(t_stack_node **a, t_stack_node **b,
@@ -99,7 +95,6 @@ void					rotate_rr(t_stack_node **a, t_stack_node **b,
 
 /* Reverse rotate operations */
 
-//void					reverse_rotate(t_stack_node **a);
 void					reverse_rotate_a(t_stack_node **a, t_stats *stats);
 void					reverse_rotate_b(t_stack_node **b, t_stats *stats);
 void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b,

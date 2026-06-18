@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_adaptive.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:47:13 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/17 13:29:30 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:59:12 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,3 @@ void	adaptive_alg(t_stack_node **a, t_stack_node **b, t_stats *stats)
 		radix_sort(a, b, stats);
 	}
 }
-
-
-

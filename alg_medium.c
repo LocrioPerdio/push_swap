@@ -3,48 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   alg_medium.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:47:24 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/17 13:31:19 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 10:50:37 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static size_t	find_max_pos(t_stack_node **stack, size_t max_index);
-static void		return_stack(t_stack_node **stack, t_stack_node **a,
-					t_stats *stats);
-static size_t	chunk_size(size_t nb);
-
-void	chunk_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
-{
-	size_t	start;
-	size_t	end;
-	size_t	s_size;
-	size_t	i;
-	size_t	chunk;
-
-	start = 0;
-	chunk = chunk_size((size_t)stack_size(*a));
-	end = chunk;
-	while (*a)
-	{
-		i = 0;
-		s_size = (size_t)(stack_size(*a));
-		while (i < s_size)
-		{
-			if (((*a)->index >= start && (*a)->index <= end))
-				push_b(a, b, stats);
-			else
-				rotate_a(a, stats);
-			i++;
-		}
-		start = end + 1;
-		end = start + chunk;
-	}
-	return_stack(b, a, stats);
-}
 
 static size_t	find_max_pos(t_stack_node **stack, size_t max_index)
 {
@@ -102,4 +68,31 @@ static size_t	chunk_size(size_t nb)
 	return (result);
 }
 
+void	chunk_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
+{
+	size_t	start;
+	size_t	end;
+	size_t	s_size;
+	size_t	i;
+	size_t	chunk;
 
+	start = 0;
+	chunk = chunk_size((size_t)stack_size(*a));
+	end = chunk;
+	while (*a)
+	{
+		i = 0;
+		s_size = (size_t)(stack_size(*a));
+		while (i < s_size)
+		{
+			if (((*a)->index >= start && (*a)->index <= end))
+				push_b(a, b, stats);
+			else
+				rotate_a(a, stats);
+			i++;
+		}
+		start = end + 1;
+		end = start + chunk;
+	}
+	return_stack(b, a, stats);
+}
