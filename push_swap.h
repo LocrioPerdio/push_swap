@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/18 10:58:18 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 19:49:52 by lbiosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ void					chunk_sort(t_stack_node **a, t_stack_node **b,
 void					radix_sort(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 void					adaptive_alg(t_stack_node **a, t_stack_node **b,
+							t_stats *stats);
+void					sort_short(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 
 /* Benchmark */

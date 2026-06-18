@@ -7,6 +7,7 @@ SRC = \
 	alg_medium.c \
 	alg_complex.c \
 	alg_adaptive.c \
+	short_sort.c \
 	check_errors.c \
 	stack.c \
 	stack_utils.c \

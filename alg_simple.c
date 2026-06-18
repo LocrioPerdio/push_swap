@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_simple.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:46:29 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/18 10:59:00 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 21:04:39 by lbiosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,35 @@ void	selection_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 
 	min_index = 0;
 	s_size = (size_t)stack_size(*a);
+	if (s_size == 3 || s_size == 5)
+		sort_short(a, b, stats);
+	else
+	{
+		while ((*a))
+		{
+			if ((*a)->index == min_index)
+			{
+				push_b(a, b, stats);
+				min_index++;
+				s_size--;
+			}
+			else if (find_min_pos(a, min_index) > s_size / 2)
+				reverse_rotate_a(a, stats);
+			else
+				rotate_a(a, stats);
+		}
+		while (*b)
+			push_a(a, b, stats);
+	}
+}
+/*
+void	selection_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
+{
+	size_t	s_size;
+	size_t	min_index;
+
+	min_index = 0;
+	s_size = (size_t)stack_size(*a);
 	while ((*a))
 	{
 		if ((*a)->index == min_index)
@@ -52,3 +81,4 @@ void	selection_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 	while (*b)
 		push_a(a, b, stats);
 }
+*/

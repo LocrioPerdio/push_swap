@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   alg_complex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/18 10:48:53 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/18 21:04:04 by lbiosca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,35 @@ void	radix_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {
 	size_t	bit;
 	size_t	max_bits;
+	size_t	i;
+
+	bit = 0;
+	max_bits = get_max_bits(a);
+	if (stack_size(*a) == 3 || stack_size(*a) == 5)
+		sort_short(a, b, stats);
+	else
+	{
+		while (bit++ < max_bits)
+		{
+			i = 0;
+			while (i < (size_t)stack_size(*a))
+			{
+				if ((((*a)->index >> bit) & 1) == 0)
+					push_b(a, b, stats);
+				else
+					rotate_a(a, stats);
+				i++;
+			}
+			while (*b)
+				push_a(a, b, stats);
+		}
+	}
+}
+/*
+void	radix_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
+{
+	size_t	bit;
+	size_t	max_bits;
 	size_t	size;
 	size_t	i;
 
@@ -61,3 +90,4 @@ void	radix_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 		bit++;
 	}
 }
+*/
