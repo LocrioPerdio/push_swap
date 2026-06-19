@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 19:57:01 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/17 13:17:07 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/19 15:54:35 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,38 @@ void	print_disorder(t_stats *stats)
 	int		integer;
 	int		fraction;
 
-	d_index = stats->disorder;
+	d_index = stats->disorder * 100.0f;
 	integer = (long)d_index;
 	fraction = (d_index - integer) * 100;
 	write(2, "[bench] disorder:  ", 18);
 	ft_putnbr_fd(integer, 2);
 	write(2, ".", 1);
-	if (fraction == 0)
+	if (fraction < 10)
 		write(2, "0", 1);
 	ft_putnbr_fd(fraction, 2);
 	write(2, "%\n", 2);
 }
+// void    print_disorder(t_stats *stats)
+// {
+//     float d_index = stats->disorder * 100.0f;
+//     int   integer = (int)d_index;
+//     int   fraction = (int)((d_index - integer) * 100);
+
+//     if (fraction < 0)
+//         fraction = -fraction;
+
+//     write(2, "[bench] disorder:  ", 18);
+//     ft_putnbr_fd(integer, 2);
+//     write(2, ".", 1);
+
+//     if (fraction < 10)
+//         write(2, "0", 1); // asegura dos dígitos
+
+//     ft_putnbr_fd(fraction, 2);
+//     write(2, "%\n", 2);
+// }
+
+
 
 void	print_strategy(t_stats *stats)
 {

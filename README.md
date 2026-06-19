@@ -149,6 +149,16 @@ evaluation tools.
 - Total number of operations
 - Per-operation statistics
 
+### Example of usage:
+```c
+% ARG=$(seq 1 100 | shuf | tr '\n' ' '); ./push_swap --bench  $ARG | wc -l
+[bench] disorder: 54.30%
+[bench] strategy: Adaptive / O(n log n)
+[bench] total_ops: 1084
+[bench] sa: 0 sb: 0 ss: 0 pa: 384 pb: 384
+[bench] ra: 316 rb: 0 rr: 0 rra: 0 rrb: 0 rrr: 0
+```
+
 ## Data Structure
 
 The project uses a doubly linked list to represent each stack.
