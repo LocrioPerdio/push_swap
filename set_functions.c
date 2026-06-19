@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   set_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 13:28:51 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/17 13:32:29 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/19 14:25:44 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	set_sorted(t_stats *stats, char *flag)
+void	set_all(t_stats *stats, char *flag)
 {
 	if (!flag || !ft_strcmp(flag, "--adaptive"))
 	{

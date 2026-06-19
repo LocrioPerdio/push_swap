@@ -131,6 +131,9 @@ Benchmark mode may also be combined with any strategy selector:
 ./push_swap --bench --complex 4 2 8 1
 ./push_swap --bench --adaptive 4 2 8 1
 ```
+
+#### This combination is only possible between `--bench` mode and one strategy selector, therefore, if the input contains `--bench` twice or `--bench` plus more than one strategy selector, the program will show "Error" and finish the execution.
+
 When enabled, the program reports additional information about the sorting
 process after execution.
 

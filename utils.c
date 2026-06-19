@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paduarte <paduarte@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 21:16:49 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/17 13:56:00 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/19 14:50:04 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,11 @@ int	parse_flags(int argc, char **argv, t_stats *stats, char **flag)
 	while (i < argc && argv[i][0] == '-')
 	{
 		if (!ft_strcmp(argv[i], "--bench"))
+		{
+			if (stats->bench)
+				show_error(NULL, NULL);
 			stats->bench = 1;
+		}
 		else if (!*flag)
 			*flag = argv[i];
 		else

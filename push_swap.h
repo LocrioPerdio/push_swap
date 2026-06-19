@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbiosca- <lbiosca-@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:59:28 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/18 19:49:52 by lbiosca-         ###   ########.fr       */
+/*   Updated: 2026/06/19 14:30:39 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void					reverse_rotate_rr(t_stack_node **a, t_stack_node **b,
 
 /* Set functions */
 
-void					set_sorted(t_stats *stats, char *flag);
+void					set_all(t_stats *stats, char *flag);
 void					set_simple(t_stack_node **a, t_stack_node **b,
 							t_stats *stats);
 void					set_medium(t_stack_node **a, t_stack_node **b,

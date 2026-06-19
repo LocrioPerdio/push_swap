@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 11:54:20 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/18 10:58:43 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/19 14:27:47 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@ static void	run_algorithm(char *flag, t_stack_node **a, t_stack_node **b,
 		t_stats *stats)
 {
 	if (!stats->disorder)
-		set_sorted(stats, flag);
+		set_all(stats, flag);
+	else if ((size_t)(stack_size(*a)) == 3 || (size_t)(stack_size(*a) == 5))
+	{
+		set_all(stats, flag);
+		sort_short(a, b, stats);
+	}
 	else if (!flag || !ft_strcmp(flag, "--adaptive"))
 		adaptive_alg(a, b, stats);
 	else if (!ft_strcmp(flag, "--simple"))
