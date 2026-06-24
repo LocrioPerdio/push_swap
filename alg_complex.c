@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 23:02:52 by paduarte          #+#    #+#             */
-/*   Updated: 2026/06/19 14:29:46 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/24 13:49:43 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,35 +34,6 @@ static size_t	get_max_bits(t_stack_node **a)
 	max_bits = get_bits(max_index);
 	return (max_bits);
 }
-
-// void	radix_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
-// {
-// 	size_t	bit;
-// 	size_t	max_bits;
-// 	size_t	i;
-
-// 	bit = 0;
-// 	max_bits = get_max_bits(a);
-// 	if (stack_size(*a) == 3 || stack_size(*a) == 5)
-// 		sort_short(a, b, stats);
-// 	else
-// 	{
-// 		while (bit++ < max_bits)
-// 		{
-// 			i = 0;
-// 			while (i < (size_t)stack_size(*a))
-// 			{
-// 				if ((((*a)->index >> bit) & 1) == 0)
-// 					push_b(a, b, stats);
-// 				else
-// 					rotate_a(a, stats);
-// 				i++;
-// 			}
-// 			while (*b)
-// 				push_a(a, b, stats);
-// 		}
-// 	}
-// }
 
 void	radix_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {

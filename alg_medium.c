@@ -6,7 +6,7 @@
 /*   By: paduarte <paduarte@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 15:47:24 by lbiosca-          #+#    #+#             */
-/*   Updated: 2026/06/19 14:29:24 by paduarte         ###   ########.fr       */
+/*   Updated: 2026/06/24 13:49:24 by paduarte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,40 +67,6 @@ static size_t	chunk_size(size_t nb)
 	}
 	return (result);
 }
-
-// void	chunk_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
-// {
-// 	size_t	start;
-// 	size_t	end;
-// 	size_t	s_size;
-// 	size_t	i;
-// 	size_t	chunk;
-
-// 	if ((size_t)(stack_size(*a)) == 3 || (size_t)(stack_size(*a) == 5))
-// 		sort_short(a, b, stats);
-// 	else
-// 	{
-// 		start = 0;
-// 		chunk = chunk_size((size_t)stack_size(*a));
-// 		end = chunk;
-// 		while (*a)
-// 		{
-// 			i = 0;
-// 			s_size = (size_t)(stack_size(*a));
-// 			while (i < s_size)
-// 			{
-// 				if (((*a)->index >= start && (*a)->index <= end))
-// 					push_b(a, b, stats);
-// 				else
-// 					rotate_a(a, stats);
-// 				i++;
-// 			}
-// 			start = end + 1;
-// 			end = start + chunk;
-// 		}
-// 		return_stack(b, a, stats);
-// 	}
-// }
 
 void	chunk_sort(t_stack_node **a, t_stack_node **b, t_stats *stats)
 {

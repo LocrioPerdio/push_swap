@@ -127,12 +127,12 @@ Benchmark mode can be enabled with:
 Benchmark mode may also be combined with any strategy selector:
 ```
 ./push_swap --bench --simple 4 2 8 1
-./push_swap --bench --medium 4 2 8 1
+./push_swap --medium --bench 4 2 8 1
 ./push_swap --bench --complex 4 2 8 1
-./push_swap --bench --adaptive 4 2 8 1
+./push_swap --adaptive --bench 4 2 8 1
 ```
 
-#### This combination is only possible between `--bench` mode and one strategy selector, therefore, if the input contains `--bench` twice or `--bench` plus more than one strategy selector, the program will show "Error" and finish the execution.
+#### This combination is only possible between `--bench` mode and one strategy selector, therefore, if the input contains `--bench` twice or `--bench` plus more than one strategy selector, the program will show "Error" and will finish the execution.
 
 When enabled, the program reports additional information about the sorting
 process after execution.
@@ -151,7 +151,7 @@ evaluation tools.
 
 ### Example of usage:
 ```c
-% ARG=$(seq 1 100 | shuf | tr '\n' ' '); ./push_swap --bench  $ARG | wc -l
+ARG=$(seq 1 100 | shuf | tr '\n' ' '); ./push_swap --bench  $ARG | wc -l
 [bench] disorder: 54.30%
 [bench] strategy: Adaptive / O(n log n)
 [bench] total_ops: 1084
